@@ -1,4 +1,4 @@
-# <img height="50%" width="50%" src="https://raw.githubusercontent.com/decal/pathgro/assets/pathgro-logo.png"/>
+# <img height="50%" width="50%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/pathgro-logo.png"/>
 
 ## Introduction
 
@@ -50,9 +50,9 @@ $ sudo make install
 ## Usage
 
 ``` shell
-Usage: pathgro [<options>] [<files>]
+Usage: pathgro [<OPTIONS>] [<FILES>]
 
-  <options>  one or more of the flags listed below
+  <OPTIONS>  one or more of the flags listed below
 
   -v, --version     displays the current software version banner string
   -h, --help        shows the usage information you're reading now
@@ -65,7 +65,7 @@ Usage: pathgro [<options>] [<files>]
   -s, --slash       prepend each path name with a slash character
   -n, --noslash     remove the slash character from each path name
 
-  <files>    path names to wordlist files for parsing and expansion
+  <FILES>    path names to wordlist files for parsing and expansion
 
 ```
 
