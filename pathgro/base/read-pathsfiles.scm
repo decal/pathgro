@@ -1,7 +1,8 @@
 (define-module (pathgro base read-pathsfiles)
-               #:export (bases dirns extns read-pathsfiles handle-pathstr)
-               #:use-module (pathgro util splitter)
-               #:use-module (pathgro util read-lines))
+               #:export (bases dirns extns read-pathsfiles handle-pathstr))
+
+(use-modules (pathgro util splitter))
+(use-modules (pathgro util read-lines))
 
 (define-values (bases dirns extns) (values '() '() '()))
 
@@ -54,8 +55,7 @@
 (define (read-pathsfiles files-list)
   (if (null? files-list)
     '()
-    (cons (apply-all (unblank (splitter (read-lines (car files-list))))) (read-pathsfiles (cdr files-list)))))
-
+    ;(cons (apply-all (unblank (splitter (read-lines (car files-list))))) (read-pathsfiles (cdr files-list)))))
     ;(cons (apply-all (delete "" (splitter (read-lines (car files-list))))) (read-pathsfiles (cdr files-list)))))
-    ;(cons (apply-all splitter (read-lines (car files-list))) (read-pathsfiles (cdr files-list)))))
+    (cons (apply-all splitter (read-lines (car files-list))) (read-pathsfiles (cdr files-list)))))
 

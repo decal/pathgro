@@ -49,25 +49,7 @@ $ sudo make install
 
 ## Usage
 
-``` shell
-Usage: pathgro [<OPTIONS>] [<FILES>]
-
-  <OPTIONS>  one or more of the flags listed below
-
-  -v, --version     displays the current software version banner string
-  -h, --help        shows the usage information you're reading now
-  -b, --basename    display base file names
-  -d, --dirname     display directory names
-  -e, --extname     display file extensions
-  -f, --filename    combine bases and extensions into full filenames
-  -x, --extdirnames append file extensions to directory names
-  -p, --powerset    compute all permutations and combinations of full pathnames
-  -s, --slash       prepend each path name with a slash character
-  -n, --noslash     remove the slash character from each path name
-
-  <FILES>    path names to wordlist files for parsing and expansion
-
-```
+<img height="50%" width="50%" src="https://raw.githubusercontent.com/decal/pathgro/assets/pathgro-command-line-usage.png" />
 
 ## License
 

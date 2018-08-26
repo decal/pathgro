@@ -1,0 +1,16 @@
+(define-module (pathgro base prepend-slashes)
+  #:export (prepend-slashes unprepend-slashes))
+
+(define (prepend-slashes slst)
+  (if (null? slst)
+    '()
+    (if (not (string=? (substring (car slst) 0 1) "/"))
+      (cons (string-append "/" (car slst)) (prepend-slashes (cdr slst)))
+      (cons (car slst) (prepend-slashes (cdr slst))))))
+
+(define (unprepend-slashes slst)
+  (if (null? slst)
+    '()
+    (if (string=? (substring (car slst) 0 1) "/")
+      (cons (substring (car slst) 1 (string-length (car slst))) (unprepend-slashes (cdr slst)))
+      (cons (car slst) (unprepend-slashes (cdr slst))))))
