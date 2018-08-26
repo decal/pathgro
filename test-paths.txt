@@ -1,0 +1,11 @@
+/WEB-INF/web.xml
+/dirname/basename.ext
+filename.txt
+folder
+/dir
+/dir2/
+dir3/
+/adir/bdir/cdir/
+css/x.css
+/cgi-bin/a.jsp
+/b.jsp
