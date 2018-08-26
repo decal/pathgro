@@ -1,4 +1,4 @@
-# <img height="50%" width="50%" src="https://raw.githubusercontent.com/decal/pathgro/assets/logo.png"/>
+# <img height="50%" width="50%" src="https://raw.githubusercontent.com/decal/pathgro/assets/pathgro-logo.png"/>
 
 ## Introduction
 
@@ -11,7 +11,7 @@ It is a set of GNU guile modules with a command-line interface.
 
 General overview of the functionality:
 
-<img height="65%" width="65%" src="https://raw.githubusercontent.com/TonCherAmi/tvsm/assets/demo.gif"/>
+<img height="65%" width="65%" src="https://raw.githubusercontent.com/decal/pathgro/assets/demo.gif"/>
 
 ## Dependencies
 
@@ -26,6 +26,13 @@ installing a package called `guile` may not be sufficient.\
 ## Installation
 
 ``` shell
+# install the required guile binaries
+$ sudo apt install guile guile-2.0-dev
+
+# or alternatively..
+$ sudo apt install linuxbrew-wrapper && brew install guile 
+# don't forget to add ~/.linuxbrew/Cellar/guile/2.x.x/bin to PATH
+
 # clone the reposityory:
 $ git clone https://github.com/decal/pathgro
 
@@ -37,7 +44,7 @@ $ make
 
 # install pathgro using the Makefile:
 # note: it might be necessary to run this as root:
-$ make install
+$ sudo make install
 ```
 
 ## Usage
