@@ -11,7 +11,7 @@ It is a set of GNU guile modules with a command-line interface.
 
 General overview of the functionality:
 
-<img height="65%" width="65%" src="https://raw.githubusercontent.com/decal/pathgro/assets/demo.gif"/>
+<img height="65%" width="65%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/demo.gif"/>
 
 ## Dependencies
 
@@ -49,7 +49,7 @@ $ sudo make install
 
 ## Usage
 
-<img height="50%" width="50%" src="https://raw.githubusercontent.com/decal/pathgro/assets/pathgro-command-line-usage.png" />
+<img height="50%" width="50%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/pathgro-command-line-usage.png" />
 
 ## License
 
