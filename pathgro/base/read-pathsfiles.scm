@@ -55,7 +55,7 @@
 (define (read-pathsfiles files-list)
   (if (null? files-list)
     '()
-    ;(cons (apply-all (unblank (splitter (read-lines (car files-list))))) (read-pathsfiles (cdr files-list)))))
+    (cons (apply-all (unblank (splitter (read-lines (car files-list))))) (read-pathsfiles (cdr files-list)))))
     ;(cons (apply-all (delete "" (splitter (read-lines (car files-list))))) (read-pathsfiles (cdr files-list)))))
-    (cons (apply-all splitter (read-lines (car files-list))) (read-pathsfiles (cdr files-list)))))
+    ;(cons (apply-all splitter (read-lines (car files-list))) (read-pathsfiles (cdr files-list)))))
 

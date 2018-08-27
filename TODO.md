@@ -5,12 +5,21 @@
 
 * split and combine on variable length substrings specified by the user
 
-* split and combine on camelCase or TitleCase, etc.
+* split and combine on camelCase, PascalCase, Title Case, snake_case, etc.
 
 * include support for a configuration file, `pathgro.conf` perhaps?
 
 * operate on GET query variables and/or values
 
+* include support for queries specified in the fragment identifier
+  - i.e. RFC7111, RFC5147, LiveURL's, Media Fragments, etc. 
+
 * accept a command-line flag for each expansion type (and create useful groups of these)
 
-* prepend period to everything for "hiddens"
+* prepend prefixes
+  - prepend period to everything for new "hidden" paths
+
+* append postfixes
+
+* insert infixes
+

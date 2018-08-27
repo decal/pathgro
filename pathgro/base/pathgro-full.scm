@@ -31,19 +31,18 @@
   '(())
   (append-map (lambda (x) (list x (cons (car slst) x))) (powerset (cdr slst)))))
 
-(define (pathgro-full cfiles)
+(define (pathgro-full fdepth cfiles)
   (define (join-path alst)
-    (define (join-path-helper hlst)
+    (define (join-path-helper acnt hlst)
       (cond
-        ((null? hlst) "")
-        ((pair? hlst) (string-append (car hlst) "/" (join-path-helper (cdr hlst))))
-        ((list? hlst) (string-append (car hlst) "/" (join-path-helper (cdr hlst))))))
-    (string-append "/" (join-path-helper alst)))
+        ((or (null? hlst) (= fdepth acnt)) "")
+        ((pair? hlst) (string-append (car hlst) "/" (join-path-helper (+ 1 acnt) (cdr hlst))))
+        ((list? hlst) (string-append (car hlst) "/" (join-path-helper (+ 1 acnt) (cdr hlst))))))
+    (string-append "/" (join-path-helper 0 alst)))
   (letrec*
     ((aset (powerset dirns))
      (amap (map join-path aset))
      (apts (flatten (map (lambda (l)
                   (combine-files amap l))
                 cfiles))))
-
     (append amap apts)))
