@@ -1,4 +1,12 @@
-<img height="32%" width="32%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/pathgro-logo.png"/>
+<table translate="no" title="PathGro" name="pathgro-table" id="pgtable" style="border-color: yellow; border-collapse: separate; border-spacing: 8px; display: table">
+  <tr>
+    <td>
+      <p align="center">
+        <img height="32%" width="32%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/pathgro-logo.png" alt="PathGro DirBuster Path Food" crossorigin="anonymous" />
+      </p>
+    </td>
+  </tr>
+</table>
 
 ## Introduction
 
@@ -49,8 +57,8 @@ $ sudo make install
 
 ## Usage
 
-<img height="50%" width="50%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/pathgro-command-line-usage.png" />
+<img height="50%" width="50%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/pathgro-command-line-usage.png" alt="PathGro Command Line Options Usage" />
 
 ## License
 
-`pathgro` is licensed under the GNU Lesser General Public License v3.0. [See LICENSE for more information](https://github.com/decal/pathgro/blob/master/LICENSE).
+`pathgro` is licensed under the GNU Lesser General Public License v3.0. [See LICENSE.txt for more information](https://github.com/decal/pathgro/blob/master/LICENSE.txt "GPLv3").
