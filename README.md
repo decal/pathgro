@@ -1,4 +1,4 @@
-<img height="50%" width="50%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/pathgro-logo.png"/>
+<img height="32%" width="32%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/pathgro-logo.png"/>
 
 ## Introduction
 
