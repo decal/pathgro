@@ -21,5 +21,6 @@
 (use-modules (pathgro main))
 
 (main (command-line))
+(debug)
 
 ;; vim: filetype=scheme

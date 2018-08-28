@@ -32,7 +32,8 @@
 ;;                                                        ;;
 ;; #:param: mode :: int(octal) - permissions              ;;
 ;; ------------------------------------------------------ ;;
-(define* (mkdirs path #:optional (mode #o777))
+;(define* (mkdirs path #:optional (mode #o777))
+(define* (mkdirs path) 
   (let ((parent-directory (dirname path)))
     (cond
       ((file-exists? path)

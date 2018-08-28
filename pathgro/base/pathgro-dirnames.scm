@@ -1,5 +1,5 @@
-(define-module (pathgro base pathgro-full)
-               #:export (pathgro-full combine-paths)
+(define-module (pathgro base pathgro-dirnames)
+               #:export (pathgro-dirnames combine-paths)
                #:use-module (ice-9 common-list))
 
 (use-modules ((pathgro base read-pathsfiles) #:select (bases dirns extns)))
@@ -31,18 +31,15 @@
   '(())
   (append-map (lambda (x) (list x (cons (car slst) x))) (powerset (cdr slst)))))
 
-(define (pathgro-full fdepth cfiles)
+(define (pathgro-dirnames adepth cfiles)
   (define (join-path alst)
     (define (join-path-helper acnt hlst)
       (cond
-        ((or (null? hlst) (= fdepth acnt)) "")
-        ((pair? hlst) (string-append (car hlst) "/" (join-path-helper (+ 1 acnt) (cdr hlst))))
-        ((list? hlst) (string-append (car hlst) "/" (join-path-helper (+ 1 acnt) (cdr hlst))))))
+        ((null? hlst) "")
+        ((= adepth acnt) "")
+        ((pair? hlst) (string-append (car hlst) "/" (join-path-helper (+ 1 acnt) (cdr hlst))))))
     (string-append "/" (join-path-helper 0 alst)))
   (letrec*
     ((aset (powerset dirns))
-     (amap (map join-path aset))
-     (apts (flatten (map (lambda (l)
-                  (combine-files amap l))
-                cfiles))))
-    (append amap apts)))
+     (amap (map join-path aset)))
+    (append amap (flatten (combine-files amap cfiles)))))
