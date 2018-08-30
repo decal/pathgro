@@ -1,5 +1,3 @@
-* implement -d, --depth command line option
-
 * split and combine on dashes and underscores (by default, allow user-specified split/combine chars)
   - also recombine by just dropping the delimiter
 

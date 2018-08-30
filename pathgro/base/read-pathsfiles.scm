@@ -58,4 +58,3 @@
     (if (not (file-exists? (car files-list)))
       (read-pathsfiles (cdr files-list))
       (cons (apply-all (delete "" (splitter (read-lines (car files-list))))) (read-pathsfiles (cdr files-list))))))
-

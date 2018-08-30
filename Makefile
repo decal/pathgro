@@ -17,18 +17,17 @@
 
 PROGNAME := pathgro
 
-PREFIX := /usr
+PREFIX := ${HOME}
 
 SCRIPTDIR := scripts
 
 CONFIG         := pathgro.conf 
-CONFIG_DESTDIR := ${DESTDIR}${PREFIX}/share/doc/${PROGNAME}
-SHARE_PATHGRO := ${DESTDIR}${PREFIX}/share/pathgro
+CONFIG_DESTDIR := ${DESTDIR}${PREFIX}/share/${PROGNAME}
 
 GUILEINC := ${DESTDIR}$(shell guile -c "(display (%site-dir))")
 GUILELIB := ${DESTDIR}$(shell guile -c "(display (%site-ccache-dir))")
 
-GUILEC := guild compile
+GUILEC := guild compile -O3
 
 SUBDIRS := $(shell find ${PROGNAME} -type d -print)
 SRC := $(foreach subdir, ${SUBDIRS}, $(wildcard ${subdir}/*.scm))
@@ -63,10 +62,6 @@ install:
 	@echo installing default config in ${CONFIG_DESTDIR}
 	@cp -p ${CONFIG} ${CONFIG_DESTDIR}/${CONFIG}
 
-	@mkdir -p ${SHARE_PATHGRO}
-	@echo creating default database folder in ${SHARE_PATHGRO}
-	@cp -av *.txt ${SHARE_PATHGRO}
-
 uninstall:
 	@rm -rf ${GUILEINC}/${PROGNAME}
 	@rm -rf ${GUILELIB}/${PROGNAME}
@@ -74,7 +69,9 @@ uninstall:
 	@rm -rf ${CONFIG_DESTDIR}
 
 test:
-	@pathgro
+	-pathgro -l2 -bxp tests/test-paths.txt > tests/output/base-exts-permute-level2.txt
+	-pathgro -l3 -bxp tests/test-paths.txt > tests/output/base-exts-permute-level3.txt
+	-pathgro -l4 -bxp tests/test-paths.txt > tests/output/base-exts-permute-level4.txt
 
 clean:
 	@rm ${OBJ}
