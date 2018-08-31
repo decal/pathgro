@@ -1,4 +1,4 @@
-;;d
+;;
 ;; pathgro - combinatoric pathname wordlist expander
 ;;
 ;; v1.0 coded by Derek Callaway [derek.callaway (AT) iocative {D0T} com]
@@ -144,7 +144,7 @@
   (display (colorize-string "com" 'WHITE 'ON-RED 'BOLD 'REVERSE 'UNDERLINE))
   (display (colorize-string "]" 'YELLOW 'BOLD))
   (newlines 2)
-  (display (colorize-string "This program comes with ABSOLUTELY NO WARRANTY, is free software and you are welcome to redistribute it under certain conditions. See the COPYING file in the root directory of the source repository for details." 'RED))
+  (display (colorize-string "This program comes with ABSOLUTELY NO WARRANTY, is free software and you are welcome to redistribute it under certain conditions. See the COPYING in the root directory of the source repository for details." 'RED))
   (newlines 2)
   (display (colorize-string "https://github.com/decal/pathgro" 'BOLD 'REVERSE 'UNDERLINE))
   (newlines 2)
@@ -193,34 +193,18 @@
       (else
         (let ((stripped-args (option-ref options '() '()))
               (pathgro-debug (getenv "PATHGRO_DEBUG")))
-          (when pathgro-debug (debug-print stripped-args))
-          (call-with-trace (lambda () (read-pathsfiles stripped-args)))
-          (when pathgro-debug (debug-print opt-level))
-          (when pathgro-debug (debug-print bases))
-          (when pathgro-debug (debug-print extns))
+          (read-pathsfiles stripped-args)
           (let ((cfiles (clean (combine-files-helper bases extns)))
                 (edirs (clean (combine-files-helper dirns extns))))
-            (when pathgro-debug (debug-print cfiles))
-            (when pathgro-debug (debug-print edirs))
             (if (or opt-basename opt-dirname opt-extname opt-filename opt-extname opt-powerset opt-extdirname)
               (begin
                 (when opt-noslash (when (not opt-slash) (set! prepend-slashes unprepend-slashes)))
                 (when (not opt-rmtrail) (set! unappend-slashes noop))
-                (when pathgro-debug (display "filename: "))
                 (when opt-filename (for-each println (prepend-slashes cfiles)))
-                (when pathgro-debug (display "basename: "))
                 (when opt-basename (for-each println (prepend-slashes bases)))
-                (when pathgro-debug (begin (display "dirns: ") (display dirns) (newline)))
-                (when pathgro-debug (display "dirname: "))
                 (when opt-dirname (for-each println (prepend-slashes dirns)))
-                (when pathgro-debug (display "extname: "))
                 (when opt-extname  (for-each println (prepend-slashes extns)))
-                (when pathgro-debug (display "extdirname: "))
                 (when opt-extdirname (for-each println (prepend-slashes edirs)))
-                (when pathgro-debug (display "cfiles: "))
-                (when pathgro-debug (begin (display cfiles) (newline)))
-                (when pathgro-debug (display "powerset: "))
-                (call-with-trace (lambda () (pathgro-compute opt-level cfiles dirns)))
                 (when opt-powerset (for-each println (pathgro-compute opt-level cfiles dirns))))
               (display-help))
             (exit 0)))))))

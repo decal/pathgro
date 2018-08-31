@@ -2,7 +2,6 @@
                #:export (pathgro-compute combine-paths combine-paths-helper combine-files combine-files-helper)
                #:use-module (ice-9 common-list))
 
-;(use-modules ((pathgro base read-pathsfiles) #:select (bases dirns extns)))
 (use-modules ((pathgro util clean-list) #:select (suniq flatten unblank unempty ununspec clean)))
 
 (define (combine-paths-helper slist elist)
@@ -16,13 +15,6 @@
   (if (< maxdc (+ (length slist) (length elist)))
     '()
     (combine-paths-helper slist elist)))
-
-;(define (combine-files dlist flist)
-;  (flatten (map (lambda (d)
-;      (map (lambda (f)
-;             (string-append d f))
-;           flist))
-;       dlist)))
 
 (define (combine-files-helper dlist flist)
   (map (lambda (d)
@@ -43,11 +35,6 @@
     (combine-files-helper dlist flist)))
 
 (use-modules (srfi srfi-1))
-
-;(define (powerset slst)
-;  (if (null? slst)
-;  '(())
-;  (append-map (lambda (x) (list x (cons (car slst) x))) (powerset (cdr slst)))))
 
 (define (powerset set)
   (if (null? set) '(())
