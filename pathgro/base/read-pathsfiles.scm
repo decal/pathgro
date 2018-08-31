@@ -1,8 +1,10 @@
 (define-module (pathgro base read-pathsfiles)
+               #:use-module (ice-9 common-list)
                #:export (bases dirns extns read-pathsfiles handle-pathstr))
 
-(use-modules (pathgro util splitter))
-(use-modules (pathgro util read-lines))
+(use-modules ((pathgro util splitter)))
+(use-modules ((pathgro util read-lines)))
+(use-modules ((pathgro util clean-list) #:select (flatten unblank unempty ununspec clean)))
 
 (define-values (bases dirns extns) (values '() '() '()))
 
@@ -23,13 +25,10 @@
 (define (extname afile)
     (cadr (string-split afile #\.)))
 
-(define (uniq e)
-  (if (null? e)
-    '()
-    (cons (car e) (uniq (filter (lambda (x) (not (string=? x (car e)))) (cdr e))))))
-
-(define (unblank l)
-  (delete "" l))
+;(define (uniq e)
+;  (if (null? e)
+;    '()
+;    (cons (car e) (uniq (filter (lambda (x) (not (string=? x (car e)))) (cdr e))))))
 
 (define (handle-pathstr patho)
   (if (null? patho)
