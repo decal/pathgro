@@ -1,13 +1,15 @@
 (define-module (pathgro util clean-list)
                #:use-module (ice-9 common-list)
                #:use-module (srfi srfi-1)
-               #:export (output-list suniq flatten blank empty blank? empty? unblank unempty unempty-unblank unblank-unempty ununspec clean))
+               #:export (pathcnt output-list suniq flatten blank empty blank? empty? unblank unempty unempty-unblank unblank-unempty ununspec clean))
 
 (use-modules (pathgro util stdio))
 (use-modules (pathgro base path-slashes))
 
+(define pathcnt 0)
+
 (define (output-list l)
-  (for-each println (clean l)))
+  (set! pathcnt (+ pathcnt (length (map println (clean l))))))
 
 (define (flatten x)
   (reverse
