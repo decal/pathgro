@@ -7,6 +7,8 @@
 
 * include support for a configuration file, `pathgro.conf` perhaps?
 
+* implement double file-extensions, like `.tar.gz` for example
+
 * operate on GET query variables and/or values
 
 * include support for queries specified in the fragment identifier

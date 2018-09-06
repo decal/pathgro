@@ -19,12 +19,11 @@ It is a set of GNU guile modules with a command-line interface.
 
 General overview of the functionality:
 
-<img height="65%" width="65%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/demo.gif"/>
+<img height="65%" width="65%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/demo.gif" alt="Terminal Command Line Typescript for Demonstrative Execution of PathGro Tool" crossorigin="anonymous" />
 
 ## Dependencies
 
 * **GNU Guile 2.x**
-
 
 * **NOTE:** you must make sure that you have both `guile` and `guild` executables installed.\
 Some distributions (e.g. *Debian*) provide `guild` separately from `guile`, so simply\
@@ -57,8 +56,8 @@ $ sudo make install
 
 ## Usage
 
-<img height="50%" width="50%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/pathgro-command-line-usage.png" alt="PathGro Command Line Options Usage" />
+<img height="50%" width="50%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/pathgro-command-line-usage.png" alt="PathGro Command Line Options Usage" crossorigin="anonymous" />
 
 ## License
 
-`pathgro` is licensed under the GNU Lesser General Public License v3.0. [See LICENSE.txt for more information](https://github.com/decal/pathgro/blob/master/LICENSE.txt "GPLv3").
+`pathgro` is licensed under the GNU Lesser General Public License v3.0. [See COPYING.txt for more information](https://github.com/decal/pathgro/blob/master/COPYING.txt "GPLv3").

@@ -1,19 +1,14 @@
-# Copyright © 2017 Vasili Karaev
+# Copyright © 2018 Derek Callaway
 #
-# This file is part of tvsm.
+# This file is part of pathgro.
 #
-# tvsm is free software: you can redistribute  it and/or modify
-# it under the terms of the GNU Lesser General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-# 
-# tvsm is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of 
-# MERCHENTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-# GNU Lesser General Public License for more details.
+# This program comes with ABSOLUTELY NO WARRANTY. It is free software and you 
+# are welcome to redistribute it under certain conditions. See the COPYING.txt
+# file in the root directory of the source repository for details.
 #
 # You should have received a copy of the GNU General Public License
-# along with tvsm. If not, see <http://www.gnu.org/licenses/>.
+# along with pathgro. If not, see <https://www.gnu.org/licenses/>.
+# 
 
 PROGNAME := pathgro
 
@@ -27,12 +22,11 @@ CONFIG_DESTDIR := ${DESTDIR}${PREFIX}/share/${PROGNAME}
 GUILEINC := ${DESTDIR}$(shell guile -c "(display (%site-dir))")
 GUILELIB := ${DESTDIR}$(shell guile -c "(display (%site-ccache-dir))")
 
-GUILEC := guild compile -O3
+GUILEC := guild compile
 
 SUBDIRS := $(shell find ${PROGNAME} -type d -print)
 SRC := $(foreach subdir, ${SUBDIRS}, $(wildcard ${subdir}/*.scm))
 OBJ := ${SRC:.scm=.go}
-TXT := 
 
 .SILENT: OBJ
 
@@ -68,10 +62,10 @@ uninstall:
 	@rm -f  ${DESTDIR}${PREFIX}/bin/${PROGNAME}
 	@rm -rf ${CONFIG_DESTDIR}
 
-test:
-	-pathgro -l2 -bxp tests/test-paths.txt > tests/output/base-exts-permute-level2.txt
-	-pathgro -l3 -bxp tests/test-paths.txt > tests/output/base-exts-permute-level3.txt
-	-pathgro -l4 -bxp tests/test-paths.txt > tests/output/base-exts-permute-level4.txt
-
 clean:
 	@rm ${OBJ}
+
+test:
+	-pathgro -l2 -bx tests/test-paths.txt > tests/output/base-exts-permute-level2.txt
+	-pathgro -l3 -bx tests/test-paths.txt > tests/output/base-exts-permute-level3.txt
+	-pathgro -l4 -bx tests/test-paths.txt > tests/output/base-exts-permute-level4.txt

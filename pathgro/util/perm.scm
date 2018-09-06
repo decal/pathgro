@@ -1,4 +1,5 @@
 (define-module (pathgro util perm)
+               #:use-module (pathgro util del-last)
                #:export (perm))
 
 (define (empty? list)

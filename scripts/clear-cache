@@ -8,6 +8,8 @@ export HOME_CACHE_GUILE=~/.cache/guile
 export HOME_LINUXBREW_GUILE=~/.linuxbrew/Cellar/guile
 # Location where `git clone` created the pathgro repository 
 export PATHGRO_GIT_REPO=~/GIT/decal/pathgro
+# Location where pathgro libraries are installed
+export PATHGRO_LIB_GUILE=/usr/lib/x86_64-linux-gnu/guile/2.0/site-ccache
 
 nice find "$GUILE_SHARE" -type d -name 'pathgro' -exec rm -frdv {} \;
 nice find "$HOME_CACHE_GUILE" -type d -name 'pathgro' -exec rm -frdv {} \;
@@ -15,3 +17,4 @@ nice find "$HOME_LINUXBREW_GUILE" -type d -name 'pathgro' -exec rm -frdv {} \;
 nice find "$PATHGRO_GIT_REPO" -type f -name '*.go' -exec rm -fv {} \;
 
 exit 0
+#/usr/lib/x86_64-linux-gnu/guile/2.0/site-ccache/pathgro

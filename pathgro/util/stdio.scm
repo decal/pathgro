@@ -12,9 +12,9 @@
 (define (fnewlines acnt aport)
   (if (zero? acnt)
     #t
-    (fnewlines (- acnt 1) aport)))
+    (begin
+      (newline aport)
+      (fnewlines (- acnt 1) aport))))
 
 (define (newlines acnt)
-  (if (zero? acnt)
-    #t
-    (fnewlines (- acnt 1) stdout)))
+  (fnewlines acnt stdout))

@@ -102,7 +102,7 @@ makes the text blink.  @samp{REVERSE} invokes reverse video.
                       lst))))
     (if (null? color-list)
         ""
-        (string-append 
+        (string-append/shared 
          (string #\esc #\[)
          (string-join color-list ";" 'infix)
          "m"))))
@@ -116,7 +116,7 @@ have any colors in effect.
 
 The allowed values for the attributes are listed in the
 documentation for the @code{color} function."
-  (string-append
+  (string-append/shared
    (apply color color-list)
    str
    (color 'RESET)))

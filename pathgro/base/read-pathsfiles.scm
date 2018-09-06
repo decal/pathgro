@@ -4,7 +4,7 @@
 
 (use-modules ((pathgro util splitter)))
 (use-modules ((pathgro util read-lines)))
-(use-modules ((pathgro util clean-list) #:select (flatten unblank unempty ununspec clean)))
+(use-modules ((pathgro util clean-list)))
 
 (define-values (bases dirns extns) (values '() '() '()))
 
@@ -32,19 +32,19 @@
 
 (define (handle-pathstr patho)
   (if (null? patho)
-    '()
+    '() 
     (let ((copad (cons patho dirns)))
       (if (pathstr-hasdir? patho)
         (if (pathstr-isdir? patho)
-            (set! dirns (uniq (unblank copad)))
+            (set! dirns (suniq (unblank copad)))
             (begin
-              (set! dirns (uniq (unblank (cons (dirname patho) dirns))))
+              (set! dirns (suniq (unblank (cons (dirname patho) dirns))))
               (handle-pathstr (basename patho))))
           (if (pathstr-hasext? patho)
             (let ((anext (extname patho)))
-                (set! extns (uniq (unblank (cons anext extns))))
-                (set! bases (uniq (unblank (cons (basename patho (string-append "." anext)) bases)))))
-            (set! dirns (uniq (unblank copad))))))))
+                (set! extns (suniq (unblank (cons anext extns))))
+                (set! bases (suniq (unblank (cons (basename patho (string-append/shared "." anext)) bases)))))
+            (set! dirns (suniq (unblank copad))))))))
 
 (define (apply-all alist)
   (if (null? alist)
@@ -56,4 +56,4 @@
     '()
     (if (not (file-exists? (car files-list)))
       (read-pathsfiles (cdr files-list))
-      (cons (apply-all (delete "" (splitter (read-lines (car files-list))))) (read-pathsfiles (cdr files-list))))))
+      (cons (apply-all (delete! "" (splitter (read-lines (car files-list))))) (read-pathsfiles (cdr files-list))))))

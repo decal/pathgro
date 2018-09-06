@@ -1,4 +1,4 @@
-(define-module (pathgro base config)
+(define-module (pathgro base read-config)
   #:export     (config)
   #:use-module (srfi srfi-1)
   #:use-module (pathgro util path))

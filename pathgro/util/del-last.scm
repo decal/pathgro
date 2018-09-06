@@ -2,11 +2,11 @@
                #:export (del-last))
 
 (define (empty? list)
-     (eq? list '()))
+  (eq? list '()))
 
-(define (del-last list)
+(define (del-last alist)
   (define (iter li rem)
-    (cond ((empty? li) rem)
-          ((empty? (cdr li)) rem)
-          (else (iter (cdr li) (cons (car li) rem)))))
-  (reverse (iter list '())))
+    (cond ((empty? alist) rem)
+          ((empty? (cdr alist)) rem)
+          (else (iter (cdr alist) (cons (car alist) rem)))))
+  (reverse (iter alist '())))
