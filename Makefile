@@ -66,6 +66,31 @@ clean:
 	@rm ${OBJ}
 
 test:
-	-pathgro -l2 -bx tests/test-paths.txt > tests/output/base-exts-permute-level2.txt
-	-pathgro -l3 -bx tests/test-paths.txt > tests/output/base-exts-permute-level3.txt
-	-pathgro -l4 -bx tests/test-paths.txt > tests/output/base-exts-permute-level4.txt
+	-pathgro -b tests/test-paths.txt
+	-pathgro -d tests/test-paths.txt
+	-pathgro -e tests/test-paths.txt
+	-pathgro -f tests/test-paths.txt
+	-pathgro -x tests/test-paths.txt
+	-pathgro -bd tests/test-paths.txt
+	-pathgro -be tests/test-paths.txt
+	-pathgro -bf tests/test-paths.txt
+	-pathgro -bx tests/test-paths.txt
+	-pathgro -de tests/test-paths.txt
+	-pathgro -df tests/test-paths.txt
+	-pathgro -dx tests/test-paths.txt
+	-pathgro -ef tests/test-paths.txt
+	-pathgro -ex tests/test-paths.txt
+	-pathgro -fx tests/test-paths.txt
+	-pathgro -bde tests/test-paths.txt
+	-pathgro -bdf tests/test-paths.txt
+	-pathgro -bdx tests/test-paths.txt
+	-pathgro -def tests/test-paths.txt
+	-pathgro -dex tests/test-paths.txt
+	-pathgro -efx tests/test-paths.txt
+	-pathgro -bdef tests/test-paths.txt
+	-pathgro -bdex tests/test-paths.txt
+	-pathgro -bdefx tests/test-paths.txt
+	-pathgro -l1 tests/test-paths.txt
+	-pathgro -l2 tests/test-paths.txt
+	-pathgro -l3 tests/test-paths.txt
+	-pathgro -l4 tests/test-paths.txt

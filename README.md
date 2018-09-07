@@ -2,7 +2,7 @@
   <tr>
     <td>
       <p align="center">
-        <img height="32%" width="32%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/pathgro-logo.png" alt="PathGro DirBuster Path Food" crossorigin="anonymous" />
+        <img height="32%" width="32%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/pathgro-logo.png" alt="PathGro Logo: DirBuster Path Food" crossorigin="anonymous" />
       </p>
     </td>
   </tr>
@@ -19,7 +19,7 @@ It is a set of GNU guile modules with a command-line interface.
 
 General overview of the functionality:
 
-<img height="65%" width="65%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/demo.gif" alt="Terminal Command Line Typescript for Demonstrative Execution of PathGro Tool" crossorigin="anonymous" />
+<img height="65%" width="65%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/pathgro-demo.gif" alt="Terminal Command Line Typescript Demonstrating Execution of PathGro Tool" crossorigin="anonymous" />
 
 ## Dependencies
 
@@ -56,7 +56,7 @@ $ sudo make install
 
 ## Usage
 
-<img height="50%" width="50%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/pathgro-command-line-usage.png" alt="PathGro Command Line Options Usage" crossorigin="anonymous" />
+<img height="50%" width="50%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/pathgro-usage.png" alt="PathGro Command Line Usage" crossorigin="anonymous" />
 
 ## License
 

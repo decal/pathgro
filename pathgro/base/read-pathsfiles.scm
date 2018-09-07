@@ -25,11 +25,6 @@
 (define (extname afile)
     (cadr (string-split afile #\.)))
 
-;(define (uniq e)
-;  (if (null? e)
-;    '()
-;    (cons (car e) (uniq (filter (lambda (x) (not (string=? x (car e)))) (cdr e))))))
-
 (define (handle-pathstr patho)
   (if (null? patho)
     '() 
