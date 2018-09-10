@@ -1,10 +1,26 @@
+* fix bug with larger powerset depths
+  - likely related to some process resource limit or guile heap size
+
 * split and combine on dashes and underscores 
   - by default, but also allow user-specified split/combine chars
   - also recombine by just dropping the delimiter
 
+* alternate case (change upper to lower case and/or vice versa)
+
+* force case settings
+  - all upper-case, or
+  - all lower-case
+
+* generate directory traversal strings
+
 * split and combine on variable length substrings specified by the user
 
 * split and combine on camelCase, PascalCase, Title Case, snake_case, etc.
+
+* modify naming syntax, i.e.
+  - camelCase => PascalCase
+  - snake_case => TitleCase
+  - etc.
 
 * include support for a configuration file, `pathgro.conf` perhaps?
 
@@ -12,6 +28,10 @@
 
 * include support for queries specified in the fragment identifier
   - i.e. RFC7111, RFC5147, LiveURL's, Media Fragments, etc. 
+
+* use a command-line option for random and/or semi-random shuffles
+
+* use command-line flags for k-permutations, n-choose-r, derangements, etc.
 
 * accept a command-line flag for each expansion type (and create useful groups of these)
 

@@ -1,0 +1,4 @@
+/page.cgi
+/a.cgi?v=1
+/cgi-bin/x.cgi?a=1&b=1
+/cgi-bin/test.cgi?c=1&a=1#fragment

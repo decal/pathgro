@@ -1,7 +1,7 @@
 (define-module (pathgro util clean-list)
                #:use-module (ice-9 common-list)
                #:use-module (srfi srfi-1)
-               #:export (pathcnt output-list suniq flatten blank empty blank? empty? unblank unempty unempty-unblank unblank-unempty ununspec clean))
+               #:export (rm2deep pathcnt output-list suniq flatten blank? empty? unblank unempty unempty-unblank unblank-unempty ununspec clean))
 
 (use-modules (pathgro util stdio))
 (use-modules (pathgro base path-slashes))
@@ -32,12 +32,8 @@
 (define (ununspec l) (noop l))
   ;(delete unspecified l))
 
-(define empty '())
-
 (define (empty? l)
   (eq? empty))
-
-(define blank "")
 
 (define (unblank l)
   (delete! blank l))
@@ -76,3 +72,12 @@
     (unempty
       (unblank
         (flatten l)))))
+
+(define (rm2deep pdep plst)
+  (if (null? plst)
+    '()
+    (letrec ((acar (car plst))
+             (slln (string-count acar #\/)))
+      (if (<= slln pdep)
+        (cons acar (rm2deep pdep (cdr plst)))
+        (rm2deep pdep (cdr plst))))))

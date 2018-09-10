@@ -90,7 +90,15 @@ test:
 	-pathgro -bdef tests/test-paths.txt
 	-pathgro -bdex tests/test-paths.txt
 	-pathgro -bdefx tests/test-paths.txt
+	-pathgro -bn tests/test-paths.txt
+	-pathgro -dn tests/test-paths.txt
+	-pathgro -en tests/test-paths.txt
+	-pathgro -fn tests/test-paths.txt
+	-pathgro -xn tests/test-paths.txt
 	-pathgro -l1 tests/test-paths.txt
+	-pathgro -nl1 tests/test-paths.txt
 	-pathgro -l2 tests/test-paths.txt
 	-pathgro -l3 tests/test-paths.txt
 	-pathgro -l4 tests/test-paths.txt
+	-pathgro -bdefxnl2 tests/test-paths.txt
+	-pathgro -bdefxl4 tests/test-paths.txt
