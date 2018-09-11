@@ -30,4 +30,4 @@
      ((aset (drop-upto-length pdepth (powerset pdepth dirns)))
       (amap (map join-path aset))
       (apls (clean amap))) ;rm2deep pdepth
-    (clean (combine-paths-helper apls cfiles))))
+    (append apls (combine-paths-helper apls cfiles))))
