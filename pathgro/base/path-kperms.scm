@@ -1,12 +1,25 @@
 (define-module (pathgro base path-kperms)
-                #:export (path-kperms path-kperms-helper))
+                #:export (path-kperms))
+
+(use-modules (pathgro base combine-paths))
+(use-modules (pathgro base path-strings))
+
+(define (index2path-helper dirns ainds)
+  (if (null? ainds)
+    '()
+    (cons (list-ref dirns (car ainds)) (index2path-helper dirns (cdr ainds)))))
+
+(define (index2path dirns ainds)
+  (if (null? ainds)
+    '()
+    (cons (string-join (index2path-helper dirns (car ainds)) "/") (index2path dirns (cdr ainds)))))
 
 (define (factorial n)    
   (if (zero? n) 
     1 
     (* n (factorial (- n 1)))))
 
-(define (path-kperms-helper n k)  ; lists will be from 0..(n-1)
+(define (calc-kperms-helper n k)  ; lists will be from 0..(n-1)
   (define pl '()) ; all permutations list;
     (let loop ((ol '())) ; one permutation list; 
       (define a (random n))  ; 0 to n-1
@@ -25,9 +38,14 @@
                   (loop '())
                   pl))))))))
 
-(define (path-kperms n k)
-  (define (path-kperms-iter n k x)
+(define (calc-kperms n k)
+  (define (calc-kperms-iter n k x)
     (if (or (> x k) (zero? k) (> k n))
       '()
-      (cons (path-kperms-helper n x) (path-kperms-iter n k (+ 1 x)))))
-  (path-kperms-iter n k 1))
+      (cons (calc-kperms-helper n x) (calc-kperms-iter n k (+ 1 x)))))
+  (calc-kperms-iter n k 1))
+
+(define (path-kperms kdepth cfiles dirns)
+  (letrec* ((kps (calc-kperms (length dirns) kdepth))
+            (kpx (append-strings "/" (index2path dirns (list-ref kps (- kdepth 1))))))
+           (append kpx (combine-paths-helper kpx cfiles))))

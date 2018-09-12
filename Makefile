@@ -95,10 +95,14 @@ test:
 	-pathgro -en tests/test-paths.txt
 	-pathgro -fn tests/test-paths.txt
 	-pathgro -xn tests/test-paths.txt
-	-pathgro -l1 tests/test-paths.txt
-	-pathgro -nl1 tests/test-paths.txt
-	-pathgro -l2 tests/test-paths.txt
-	-pathgro -l3 tests/test-paths.txt
-	-pathgro -l4 tests/test-paths.txt
-	-pathgro -bdefxnl2 tests/test-paths.txt
-	-pathgro -bdefxl4 tests/test-paths.txt
+	-pathgro -c1 tests/test-paths.txt
+	-pathgro -nc1 tests/test-paths.txt
+	-pathgro -c2 tests/test-paths.txt
+	-pathgro -c3 tests/test-paths.txt
+	-pathgro -c4 tests/test-paths.txt
+	-pathgro -bdefxnc2 tests/test-paths.txt
+	-pathgro -bdefxc4 tests/test-paths.txt
+	-pathgro -k1 tests/test-paths.txt
+	-pathgro -k2 tests/test-paths.txt
+	-pathgro -p1 tests/test-paths.txt
+	-pathgro -p2 tests/test-paths.txt

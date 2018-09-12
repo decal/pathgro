@@ -6,7 +6,6 @@
 (use-modules (pathgro base path-strings))
 (use-modules (pathgro util stdio))
 (use-modules (pathgro util clean-list))
-(use-modules (pathgro util splitter))
 
 (use-modules (srfi srfi-1))
 
@@ -20,14 +19,8 @@
                        (cons (car set) ss)) ps-rest)))))
 
 (define (path-powerset pdepth cfiles dirns)
-  (define (join-path alst)
-    (define (join-path-helper acnt hlst)
-      (cond
-        ((null? hlst) blank)
-        ((pair? hlst) (string-append/shared (car hlst) slash (join-path-helper (+ 1 acnt) (cdr hlst))))))
-    (string-append/shared slash (join-path-helper 0 alst)))
   (letrec*
      ((aset (drop-upto-length pdepth (powerset pdepth dirns)))
       (amap (map join-path aset))
-      (apls (clean amap))) ;rm2deep pdepth
+      (apls (clean amap))) 
     (append apls (combine-paths-helper apls cfiles))))

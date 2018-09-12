@@ -1,6 +1,6 @@
 (define-module (pathgro base path-strings)
   #:use-module (ice-9 common-list)
-  #:export (join-path append-strings drop-string-length drop-length drop-upto-length prepend-strings unappend-strings unprepend-strings)) 
+  #:export (paths2words max-depth join-path append-strings drop-string-length drop-length drop-upto-length prepend-strings unappend-strings unprepend-strings)) 
 
 (define (prepend-strings astr slst)
   (if (null? slst)
@@ -51,3 +51,12 @@
       ((null? hlst) "")
       ((pair? hlst) (string-append/shared (car hlst) "/" (join-path-helper (+ 1 acnt) (cdr hlst))))))
   (string-append/shared "/" (join-path-helper 0 alst)))
+
+(define max-depth 0)
+
+(define (paths2words lines)
+  (if (null? lines)
+    '()
+    (let ((asp (delete! "" (string-split (car lines) #\/))))
+      (when (> (length asp) max-depth) (set! max-depth (length asp)))
+      (cons asp (paths2words (cdr lines))))))

@@ -33,20 +33,20 @@
   ;(delete unspecified l))
 
 (define (empty? l)
-  (eq? empty))
+  (eq? '()))
 
 (define (unblank l)
-  (delete! blank l))
+  (delete! "" l))
 
 (define (blank? l)
-  (eq? blank))
+  (eq? ""))
 
 (define (unempty l)
-  (delete! empty l))
+  (delete! '() l))
 
 (define (remove-dups l)
   (cond
-    [(empty? l) empty]
+    [(empty? l) '()]
     [(empty? (rest l)) l]
     [else
       (let ([i (first l)])
@@ -58,12 +58,12 @@
   (if (null? e)
     '()
     (let ((ce (car e)))
-      (if (or (eq? ce '()) (string=? ce blank))
+      (if (or (eq? ce '()) (string=? ce ""))
         (suniq (filter (lambda (x) (not (string=? x ce))) (cdr e)))
         (cons ce (suniq (filter (lambda (x) (not (string=? x ce))) (cdr e))))))))
 
 (define (unempty-unblank l)
-  (filter (lambda (e) (not (or (eq? e empty) (string=? blank e)))) alist))
+  (filter (lambda (e) (not (or (eq? e '()) (string=? "" e)))) alist))
 
 (define (unblank-unempty l) unempty-unblank)
 

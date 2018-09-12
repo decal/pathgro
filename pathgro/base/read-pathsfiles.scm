@@ -2,9 +2,9 @@
                #:use-module (ice-9 common-list)
                #:export (bases dirns extns read-pathsfiles handle-pathstr))
 
-(use-modules ((pathgro util splitter)))
-(use-modules ((pathgro util read-lines)))
-(use-modules ((pathgro util clean-list)))
+(use-modules (pathgro base path-strings))
+(use-modules (pathgro util read-lines))
+(use-modules (pathgro util clean-list))
 
 (define-values (bases dirns extns) (values '() '() '()))
 
@@ -51,4 +51,4 @@
     '()
     (if (not (file-exists? (car files-list)))
       (read-pathsfiles (cdr files-list))
-      (cons (apply-all (delete! "" (splitter (read-lines (car files-list))))) (read-pathsfiles (cdr files-list))))))
+      (cons (apply-all (delete! "" (paths2words (read-lines (car files-list))))) (read-pathsfiles (cdr files-list))))))
