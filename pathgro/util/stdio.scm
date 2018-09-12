@@ -1,10 +1,6 @@
 (define-module (pathgro util stdio)
   #:export (stdin stdout stderr fprintln println fnewlines newlines ununspec 
-                  empty blank slash dot 
-                  blank-string slash-string dot-string period-string
-                  slash-char backslash-char dot-char 
-                  forward-slash-char back-slash-char period-char
-                  empty? unblank blank? unempty))
+                  empty? unblank blank? unempty false? true?))
 
 (define (fprintln astr aport)
   (display astr aport)
@@ -31,20 +27,20 @@
 (define (ununspec l) (noop l))
   ;(delete unspecified l))
 
-(define-values (empty blank slash dot) (values '() "" "/" "."))
-(define-values (blank-string slash-string dot-string) (values blank slash dot))
-(define-values (period-string) (values dot-string))
-(define-values (slash-char backslash-char dot-char) (values #\/ #\\ #\.))
-(define-values (forward-slash-char back-slash-char period-char) (values slash-char backslash-char dot-char))
-
 (define (empty? l)
-  (eq? empty))
+  (eq? '()))
 
 (define (unblank l)
-  (delete! blank l))
+  (delete! "" l))
 
 (define (blank? l)
-  (eq? blank))
+  (eq? ""))
 
 (define (unempty l)
-  (delete! empty l))
+  (delete! '() l))
+
+(define (false? v)
+  (eq? #f v))
+
+(define (true? v)
+  (eq? #t v))
