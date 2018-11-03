@@ -1,5 +1,15 @@
-* fix bug with larger powerset depths
-  - likely related to some process resource limit or guile heap size
+* if read file misses slash at beginning of line, then add one..
+  - `pathgro -k1 ~/repos/SecLists/Discovery/Web-Content/coldfusion.txt`
+
+* fix exceptions
+  - `pathgro -p1 sunas.txt`
+  - `pathgro -k1 sap.txt`
+
+* use `guile-coroutines` for `lazy-flatten`
+
+* support date string formatting
+  - `~d/~y` => 31/18
+  - `~b/~A/~Y` => Sun/Mar/2018
 
 * split and combine on dashes and underscores 
   - by default, but also allow user-specified split/combine chars
@@ -13,6 +23,8 @@
 
 * generate directory traversal strings
 
+* generate percent-encoded paths
+
 * split and combine on variable length substrings specified by the user
 
 * split and combine on camelCase, PascalCase, Title Case, snake_case, etc.
@@ -22,7 +34,7 @@
   - snake_case => TitleCase
   - etc.
 
-* include support for a configuration file, `pathgro.conf` perhaps?
+* include support for configuration file `pathgro.conf`
 
 * operate on GET query variables and/or values
 
@@ -31,9 +43,16 @@
 
 * use a command-line option for random and/or semi-random shuffles
 
-* use command-line flags for k-permutations, n-choose-r, derangements, etc.
+* implement derangements
 
 * accept a command-line flag for each expansion type (and create useful groups of these)
+  - --Type1, -T1 (--basename, --extname, --filename)
+  - --Type2, -T2 (--dirname, --xtdirname)
+  - --Type3, -T3 (--basename, --extname, --filename, --dirname, --xtdirname)
+  - --Type4, -T4 (--macos, --saves)
+  - --Type5, -T5 (--generate, --vimswap)
+  - --Type6, -T6 (--macos, --saves, --generate, --vimswap)
+  - --Type7, -T7 (--Combos 1, --Powerset 1, --Kperms 1)
 
 * string insertion features
   1. prefixes

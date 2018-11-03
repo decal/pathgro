@@ -6,7 +6,7 @@
 (define (combine-paths-helper slist elist)
   (map (lambda (x)
          (map (lambda (y)
-                (string-append/shared x y))
+		(string-append x y))
               elist))
        slist))
 
@@ -20,7 +20,7 @@
 (define (combine-files-helper dlist flist)
   (map (lambda (d)
          (map (lambda (f)
-                (string-append/shared d "." f))
+                (string-append d "." f))
               flist))
        dlist))
 

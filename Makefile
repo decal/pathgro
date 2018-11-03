@@ -16,8 +16,8 @@ PREFIX := ${HOME}
 
 SCRIPTDIR := scripts
 
-CONFIG         := pathgro.conf 
-CONFIG_DESTDIR := ${DESTDIR}${PREFIX}/share/${PROGNAME}
+#CONFIG         := pathgro.conf 
+#CONFIG_DESTDIR := ${DESTDIR}${PREFIX}/share/${PROGNAME}
 
 GUILEINC := ${DESTDIR}$(shell guile -c "(display (%site-dir))")
 GUILELIB := ${DESTDIR}$(shell guile -c "(display (%site-ccache-dir))")
@@ -52,15 +52,15 @@ install:
 	@echo installing executable script in ${DESTDIR}${PREFIX}/bin
 	@cp -p ${SCRIPTDIR}/${PROGNAME} ${DESTDIR}${PREFIX}/bin/${PROGNAME}
 
-	@mkdir -p ${CONFIG_DESTDIR}
-	@echo installing default config in ${CONFIG_DESTDIR}
-	@cp -p ${CONFIG} ${CONFIG_DESTDIR}/${CONFIG}
+	#@mkdir -p ${CONFIG_DESTDIR}
+	#@echo installing default config in ${CONFIG_DESTDIR}
+	#@cp -p ${CONFIG} ${CONFIG_DESTDIR}/${CONFIG}
 
 uninstall:
 	@rm -rf ${GUILEINC}/${PROGNAME}
 	@rm -rf ${GUILELIB}/${PROGNAME}
 	@rm -f  ${DESTDIR}${PREFIX}/bin/${PROGNAME}
-	@rm -rf ${CONFIG_DESTDIR}
+	#@rm -rf ${CONFIG_DESTDIR}
 
 clean:
 	@rm ${OBJ}
@@ -95,14 +95,20 @@ test:
 	-pathgro -en tests/test-paths.txt
 	-pathgro -fn tests/test-paths.txt
 	-pathgro -xn tests/test-paths.txt
-	-pathgro -c1 tests/test-paths.txt
-	-pathgro -nc1 tests/test-paths.txt
-	-pathgro -c2 tests/test-paths.txt
-	-pathgro -c3 tests/test-paths.txt
-	-pathgro -c4 tests/test-paths.txt
-	-pathgro -bdefxnc2 tests/test-paths.txt
-	-pathgro -bdefxc4 tests/test-paths.txt
-	-pathgro -k1 tests/test-paths.txt
-	-pathgro -k2 tests/test-paths.txt
-	-pathgro -p1 tests/test-paths.txt
-	-pathgro -p2 tests/test-paths.txt
+	-pathgro -P1 tests/test-paths.txt
+	-pathgro -bdefxn tests/test-paths.txt
+	-pathgro -C1 tests/test-paths.txt
+	-pathgro -K1 tests/test-paths.txt
+	-pathgro -m tests/test-paths.txt
+	-pathgro -v tests/test-paths.txt
+	-pathgro -s tests/test-paths.txt
+	-pathgro -mv tests/test-paths.txt
+	-pathgro -mvs tests/test-paths.txt
+	-pathgro -g tests/test-paths.txt
+	-pathgro --1Grow tests/test-paths.txt
+	-pathgro --2Grow tests/test-paths.txt
+	-pathgro --3Grow tests/test-paths.txt
+	-pathgro --4Grow tests/test-paths.txt
+	-pathgro --5Grow tests/test-paths.txt
+	-pathgro --6Grow tests/test-paths.txt
+	-pathgro --7Grow tests/test-paths.txt

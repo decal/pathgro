@@ -10,16 +10,19 @@
 
 ## Introduction
 
-`pathgro` freely commingles pathname parts into new omnifarious string mappings.
-It is designed to maximize attack surface coverage when testing software 
-components that take pathnames as input--when "dirbusting", for example.
-It is a set of GNU guile modules with a command-line interface.
+`pathgro` takes a brief list of path strings as input and "grows" them into much
+larger sets. It is a tool that freely commingles pathname pieces to generate new
+omnifarious string mappings. It is designed to maximize attack surface coverage
+when testing software components that take pathnames as input, ie. "dirbusting."
+It is a set of GNU Guile modules with a command-line interface.
 
 ## Examples
 
 General overview of the functionality:
 
 <img height="65%" width="65%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/pathgro-demo.gif" alt="Terminal Command Line Typescript Demonstrating Execution of PathGro Tool" crossorigin="anonymous" />
+
+Note that `pathgro -c1` and `pathgro -k1` will generate equivalent lists according to their definitions.
 
 ## Dependencies
 
@@ -49,8 +52,10 @@ $ cd pathgro
 # compile the source using the Makefile:
 $ make
 
-# install pathgro using the Makefile:
-# note: it might be necessary to run this as root:
+# execute tests using the Makefile:
+$ make test
+
+# install pathgro using the Makefile (probably requires root):
 $ sudo make install
 ```
 

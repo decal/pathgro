@@ -1,18 +1,26 @@
 (define-module (pathgro util clean-list)
                #:use-module (ice-9 common-list)
+               #:use-module (ice-9 regex)
                #:use-module (srfi srfi-1)
-               #:export (rm2deep pathcnt output-list suniq flatten blank? empty? unblank unempty unempty-unblank unblank-unempty ununspec clean))
+               #:export (pathcnt output-list suniq flatten blank? empty? unblank unempty unempty-unblank unblank-unempty ununspec clean clean2 empty-string-list?))
 
 (use-modules (pathgro util stdio))
 (use-modules (pathgro base path-slashes))
 
 (define pathcnt 0)
 
+(define (perform-slash-regexps astr)
+  (let ((rstr (regexp-substitute/global #f "/+" astr 'pre "/" 'post)))
+      (regexp-substitute/global #f "/$" rstr 'pre "" 'post)))
+
+(define (regexps-and-print s)
+  (println (perform-slash-regexps s)))
+
 (define (output-list l)
-  (set! pathcnt (+ pathcnt (length (map println (clean l))))))
+  (set! pathcnt (+ pathcnt (length (map regexps-and-print (clean l))))))
 
 (define (flatten x)
-  (reverse
+  (reverse!
     (let loop ((x x) (r '()))
       (if (pair? x)
         (loop (cdr x) (loop (car x) r))
@@ -63,21 +71,20 @@
         (cons ce (suniq (filter (lambda (x) (not (string=? x ce))) (cdr e))))))))
 
 (define (unempty-unblank l)
-  (filter (lambda (e) (not (or (eq? e '()) (string=? "" e)))) alist))
+  (filter (lambda (e) (not (or (eq? e '()) (string=? "" e)))) l))
 
 (define (unblank-unempty l) unempty-unblank)
 
+(define (clean2 l)
+  (delete-duplicates!
+    (unempty-unblank
+      (flatten l))))
+
 (define (clean l)
   (delete-duplicates!
-    (unempty
-      (unblank
-        (flatten l)))))
+        (flatten l)))
 
-(define (rm2deep pdep plst)
-  (if (null? plst)
-    '()
-    (letrec ((acar (car plst))
-             (slln (string-count acar #\/)))
-      (if (<= slln pdep)
-        (cons acar (rm2deep pdep (cdr plst)))
-        (rm2deep pdep (cdr plst))))))
+(define (empty-string-list? alist)
+  (if (null? alist)
+    alist
+    (and (= 1 (length alist)) (eq? (car alist) ""))))

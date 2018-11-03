@@ -5,12 +5,12 @@
 (use-modules (pathgro base path-strings))
 
 (define (index2path-helper dirns ainds)
-  (if (null? ainds)
+  (if (or (null? ainds) (null? dirns))
     '()
     (cons (list-ref dirns (car ainds)) (index2path-helper dirns (cdr ainds)))))
 
 (define (index2path dirns ainds)
-  (if (null? ainds)
+  (if (or (null? ainds) (null? dirns))
     '()
     (cons (string-join (index2path-helper dirns (car ainds)) "/") (index2path dirns (cdr ainds)))))
 
@@ -23,20 +23,19 @@
   (define pl '()) ; all permutations list;
     (let loop ((ol '())) ; one permutation list; 
       (define a (random n))  ; 0 to n-1
-      (if 
-        (member a ol) (loop ol)
+      (if (member a ol) 
+	(loop ol)
         (begin 
           (set! ol (cons a ol))
-          (if 
-            (< (length ol) k) (loop ol)
-            (if (member ol pl) (loop '())
-              (begin 
-                (set! pl (cons ol pl))
-                (if (< (length pl)
-                       (/ (factorial n)
-                          (factorial (- n k))))
-                  (loop '())
-                  pl))))))))
+          (if (< (length ol) k) 
+	      (loop ol)
+	      (if (member ol pl) 
+		(loop '())
+		(begin 
+		  (set! pl (cons ol pl))
+		  (if (< (length pl) (/ (factorial n) (factorial (- n k))))
+		      (loop '())
+		      pl))))))))
 
 (define (calc-kperms n k)
   (define (calc-kperms-iter n k x)
@@ -46,6 +45,9 @@
   (calc-kperms-iter n k 1))
 
 (define (path-kperms kdepth cfiles dirns)
-  (letrec* ((kps (calc-kperms (length dirns) kdepth))
-            (kpx (append-strings "/" (index2path dirns (list-ref kps (- kdepth 1))))))
-           (append kpx (combine-paths-helper kpx cfiles))))
+  (let ((aln (length dirns)))
+    (let ((kps (calc-kperms (length dirns) kdepth)))
+      (if (null? kps)
+	  cfiles
+          (let ((kpx (append-strings "/" (index2path dirns (list-ref kps (- kdepth 1))))))
+	    (append kpx (combine-paths-helper kpx cfiles)))))))

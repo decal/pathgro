@@ -1,9 +1,35 @@
-(define-module (pathgro util path)
-  #:export     (mkdirs
-                directory?
-                expand-user
-                expand-variables)
-  #:use-module (ice-9 regex))
+(define-module (pathgro util path-tools)
+  #:use-module (ice-9 regex)
+  #:export     (mkdirs directory? expand-user expand-variables basefilename extname))
+
+
+;; ------------------------------------------------------ ;;
+;; Get base file name without extension from pathname.    ;;
+;; Like basename, but does not have what extname would    ;;
+;; include. The result will also not include any dots.    ;;
+;; ------------------------------------------------------ ;;
+;; #:param: path :: string - path                         ;;
+;; ------------------------------------------------------ ;;
+(define (basefilename afile)
+  (car (string-split (basename afile) #\.)))
+
+;; ------------------------------------------------------ ;;
+;; Extract file extension string from path name.          ;;
+;; Essentially emulate extname() functions, but do not    ;;
+;; include a period at beginning of returned string.      ;;
+;; ------------------------------------------------------ ;;
+;; #:param: path :: string - path                         ;;
+;; ------------------------------------------------------ ;;
+(define (extname afile)
+  (define (extname-helper acnt alen alst)
+    (if (= acnt (- alen 1))
+      (list-ref alst acnt)
+      (string-append (list-ref alst acnt) "." (extname-helper (+ 1 acnt) alen alst))))
+  (letrec* ((alst (string-split afile #\.))
+            (alen (length alst)))
+    (if (>= 1 alen)
+      afile
+      (extname-helper 1 alen alst))))
 
 ;; ------------------------------------------------------ ;;
 ;; Create directories recursively. Like 'mkdir', but      ;;
