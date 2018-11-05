@@ -112,3 +112,4 @@ test:
 	-pathgro --5Grow tests/test-paths.txt
 	-pathgro --6Grow tests/test-paths.txt
 	-pathgro --7Grow tests/test-paths.txt
+	-pathgro --8Grow tests/test-paths.txt

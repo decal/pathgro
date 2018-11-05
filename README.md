@@ -22,7 +22,7 @@ General overview of the functionality:
 
 <img height="65%" width="65%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/pathgro-demo.gif" alt="Terminal Command Line Typescript Demonstrating Execution of PathGro Tool" crossorigin="anonymous" />
 
-Note that `pathgro -c1` and `pathgro -k1` will generate equivalent lists according to their definitions.
+Note that `pathgro -C1` and `pathgro -K1` will generate equivalent lists according to their definitions.
 
 ## Dependencies
 

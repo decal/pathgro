@@ -11,6 +11,7 @@
       (string-append "." apth "#")
       (string-append "#" apth "#")
       (string-append ".#" apth "#")
+      (string-append "~" apth)
       (string-append apth "~")
       (string-append "." apth "~")
       (string-append ".~" apth)

@@ -1,6 +1,9 @@
-#!/usr/bin/env guile
+#!/usr/bin/env guile 
 !#
+;; vim: filetype=scheme
+;;
 ;; pathgro - a pathname wordlist generator
+;;
 ;; Copyright © 2018 Derek Callaway
 ;;
 ;; This file is part of pathgro.
@@ -22,5 +25,7 @@
 (use-modules (pathgro main))
 
 (main (command-line))
+
+(exit 0)
 
 ;; vim: filetype=scheme

@@ -2,7 +2,7 @@
                #:use-module (ice-9 common-list)
                #:use-module (ice-9 regex)
                #:use-module (srfi srfi-1)
-               #:export (pathcnt output-list suniq flatten blank? empty? unblank unempty unempty-unblank unblank-unempty ununspec clean clean2 empty-string-list?))
+               #:export (pathcnt output-list suniq flatten blank? empty? unblank unempty unempty-unblank unblank-unempty clean clean2 empty-string-list?))
 
 (use-modules (pathgro util stdio))
 (use-modules (pathgro base path-slashes))
@@ -27,18 +27,6 @@
           (if (null? x)
             r
             (cons x r))))))
-
-;(define (flatten e)
-  ;(cond
-    ;((pair? e) `(,@(flatten (car e)) ,@(flatten (cdr e))))
-    ;((null? e) '())
-    ;(else (list e))))
-
-;(define unspecified (begin))
-;(define (unspecified? v) (eq? unspecified) v)
-
-(define (ununspec l) (noop l))
-  ;(delete unspecified l))
 
 (define (empty? l)
   (eq? '()))

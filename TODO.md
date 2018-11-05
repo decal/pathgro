@@ -45,15 +45,6 @@
 
 * implement derangements
 
-* accept a command-line flag for each expansion type (and create useful groups of these)
-  - --Type1, -T1 (--basename, --extname, --filename)
-  - --Type2, -T2 (--dirname, --xtdirname)
-  - --Type3, -T3 (--basename, --extname, --filename, --dirname, --xtdirname)
-  - --Type4, -T4 (--macos, --saves)
-  - --Type5, -T5 (--generate, --vimswap)
-  - --Type6, -T6 (--macos, --saves, --generate, --vimswap)
-  - --Type7, -T7 (--Combos 1, --Powerset 1, --Kperms 1)
-
 * string insertion features
   1. prefixes
     - prepend period for "hidden" paths
