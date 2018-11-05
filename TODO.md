@@ -2,7 +2,6 @@
   - `pathgro -k1 ~/repos/SecLists/Discovery/Web-Content/coldfusion.txt`
 
 * fix exceptions
-  - `pathgro -p1 sunas.txt`
   - `pathgro -k1 sap.txt`
 
 * use `guile-coroutines` for `lazy-flatten`
@@ -20,8 +19,6 @@
 * force case settings
   - all upper-case, or
   - all lower-case
-
-* generate directory traversal strings
 
 * generate percent-encoded paths
 

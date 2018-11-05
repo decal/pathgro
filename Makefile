@@ -99,6 +99,8 @@ test:
 	-pathgro -bdefxn tests/test-paths.txt
 	-pathgro -C1 tests/test-paths.txt
 	-pathgro -K1 tests/test-paths.txt
+	-pathgro -T1 tests/test-paths.txt
+	-pathgro -T2 tests/test-paths.txt
 	-pathgro -m tests/test-paths.txt
 	-pathgro -v tests/test-paths.txt
 	-pathgro -s tests/test-paths.txt

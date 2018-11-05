@@ -9,4 +9,4 @@
 ; [._]sw[a-p]
 
 (define (path-vimswap apth)
-  (map (lambda (x) (string-append "." apth ".sw" (list->string (list (integer->char x))))) (iota 16 97 1)))
+  (map (lambda (x) (string-append "/" "." apth ".sw" (list->string (list (integer->char x))))) (iota 16 97 1)))
