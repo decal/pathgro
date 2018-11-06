@@ -1,7 +1,4 @@
-* if read file misses slash at beginning of line, then add one..
-  - `pathgro -k1 ~/repos/SecLists/Discovery/Web-Content/coldfusion.txt`
-
-* fix exceptions
+* fix exception
   - `pathgro -k1 sap.txt`
 
 * use `guile-coroutines` for `lazy-flatten`

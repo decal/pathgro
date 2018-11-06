@@ -26,7 +26,7 @@
   (cadr (string-split afile #\.)))
 
 (define (handle-pathstr patho)
-  (let ((copad (cons patho dirns)))
+  (let ((copad (cons (string-trim-right patho) dirns)))
     (if (pathstr-hasdir? patho)
       (if (pathstr-isdir? patho)
         (set! dirns (suniq (unblank copad)))
