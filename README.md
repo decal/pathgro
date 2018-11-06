@@ -63,6 +63,22 @@ $ sudo make install
 
 <img height="50%" width="50%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/pathgro-usage.png" alt="PathGro Command Line Usage" crossorigin="anonymous" />
 
+* * *
+
+|&nbsp;&nbsp;Mode&nbsp;Number&nbsp;&nbsp;| _Description of Grow Level_ 
+|:---------------------------------------|-----------------------------------------------------------------------
+| --0Grow, -0                            | _All_ command-line flags are randomly enabled
+| --1Grow, -1                            | `--basename`, `--extname`, `--filename`
+| --2Grow, -2                            | `--dirname`, `--xtdirname`
+| --3Grow, -3                            | `--basename`, `--extname`, `--filename`, `--dirname`, `--xtdirname`, 
+| --4Grow, -4                            | `--macos`, `--saves`
+| --5Grow, -5                            | `--generate`, `--vimswap`
+| --6Grow, -6                            | `--macos`, `--saves`, `--generate`, `--vimswap`
+| --7Grow, -7                            | `--Combos 1`, `--Powerset 1`, `--Kperms 1`, `--Traverse 1`
+| --8Grow, -8                            | `--basename`, `--extname`, `--filename`, `--dirname`
+
+* * *
+
 ## License
 
 `pathgro` is licensed under the GNU Lesser General Public License v3.0. [See COPYING.txt for more information](https://github.com/decal/pathgro/blob/master/COPYING.txt "GPLv3").

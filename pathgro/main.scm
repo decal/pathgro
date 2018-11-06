@@ -15,12 +15,13 @@
 (use-modules (pathgro base path-kperms) (pathgro base path-slashes) (pathgro base path-strings))
 (use-modules (pathgro base path-powerset) (pathgro base path-saves) (pathgro base path-traverse))
 (use-modules (pathgro base path-generate) (pathgro base path-macos) (pathgro base path-vimswap))
-(use-modules (pathgro version) (pathgro help))
+(use-modules (pathgro util rand-values) (pathgro version) (pathgro help))
 
 (define (main args) 
   (let* 
     ((option-spec 
       '((help       (single-char #\h))
+	(0Grow      (single-char #\0))
         (1Grow      (single-char #\1))
         (2Grow      (single-char #\2))
         (3Grow      (single-char #\3))
@@ -47,6 +48,7 @@
         (Version    (single-char #\V))))
      (options          (getopt-long args option-spec #:stop-at-first-non-option #t))
      (opt-help         (option-ref options 'help #f))
+     (opt-0Grow        (option-ref options '0Grow #f))
      (opt-1Grow        (option-ref options '1Grow #f))
      (opt-2Grow        (option-ref options '2Grow #f))
      (opt-3Grow        (option-ref options '3Grow #f))
@@ -77,16 +79,17 @@
       (opt-Version
         (display-version))
       (else
+	(when opt-0Grow (begin (set! opt-basename (rand-truth-value)) (set! opt-extname (rand-truth-value)) (set! opt-filename (rand-truth-value)) (set! opt-dirname (rand-truth-value)) (set! opt-xtdirname (rand-truth-value)) (set! opt-macos (rand-truth-value)) (set! opt-saves (rand-truth-value)) (set! opt-generate (rand-truth-value)) (set! opt-vimswap (rand-truth-value))))
         (when opt-1Grow (begin (set! opt-basename #t) (set! opt-extname #t) (set! opt-filename #t)))
         (when opt-2Grow (begin (set! opt-dirname #t) (set! opt-xtdirname #t)))
         (when opt-3Grow (begin (set! opt-basename #t) (set! opt-extname #t) (set! opt-filename #t) (set! opt-dirname #t) (set! opt-xtdirname #t)))
         (when opt-4Grow (begin (set! opt-macos #t) (set! opt-saves #t)))
         (when opt-5Grow (begin (set! opt-generate #t) (set! opt-vimswap #t)))
         (when opt-6Grow (begin (set! opt-macos #t) (set! opt-saves #t) (set! opt-generate #t) (set! opt-vimswap #t)))
-        (when opt-7Grow (begin (set! opt-Combos 1) (set! opt-Powerset 1) (set! opt-Kperms 1)))
+        (when opt-7Grow (begin (set! opt-Combos 1) (set! opt-Powerset 1) (set! opt-Kperms 1) (set! opt-Traverse 1)))
         (when opt-8Grow (begin (set! opt-basename #t) (set! opt-extname #t) (set! opt-filename #t) (set! opt-dirname #t)
           (set! opt-xtdirname #t) (set! opt-macos #t) (set! opt-saves #t) (set! opt-generate #t) (set! opt-vimswap #t)
-          (set! opt-Combos 1) (set! opt-Powerset 1) (set! opt-Kperms 1)))
+          (set! opt-Combos 1) (set! opt-Powerset 1) (set! opt-Kperms 1) (set! opt-Traverse 1)))
         (let ((stripped-args (option-ref options '() '()))
               (pathgro-debug (getenv "PATHGRO_DEBUG")))
           (when (zero? (length stripped-args)) (display-help))
@@ -95,10 +98,10 @@
                 (edirs (prepend-slashes (clean (combine-files-helper dirns extns)))))
                   (when opt-noslash (set! prepend-slashes unprepend-slashes))
                   (if opt-rmtrail 
-		                (begin 
+		    (begin 
                       (set! dirns (unappend-slashes dirns))
-			                (set! edirs (unappend-slashes edirs)))
-		                (set! unappend-slashes append-slashes))
+		      (set! edirs (unappend-slashes edirs)))
+		    (set! unappend-slashes append-slashes))
                   (when (and opt-filename (zero? opt-Powerset)) (output-list (prepend-slashes cfiles)))
                   (when opt-basename   (output-list (prepend-slashes bases)))
     (when opt-generate   (output-list (prepend-slashes (flatten (map (lambda (b) (path-generate b)) bases)))))
