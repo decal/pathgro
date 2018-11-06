@@ -79,7 +79,7 @@
       (opt-Version
         (display-version))
       (else
-	(when opt-0Grow (begin (set! opt-basename (rand-truth-value)) (set! opt-extname (rand-truth-value)) (set! opt-filename (rand-truth-value)) (set! opt-dirname (rand-truth-value)) (set! opt-xtdirname (rand-truth-value)) (set! opt-macos (rand-truth-value)) (set! opt-saves (rand-truth-value)) (set! opt-generate (rand-truth-value)) (set! opt-vimswap (rand-truth-value))))
+	(when opt-0Grow (begin (srand) (set! opt-basename (rand-truth-value)) (srand) (set! opt-extname (rand-truth-value)) (srand) (set! opt-filename (rand-truth-value)) (srand) (set! opt-dirname (rand-truth-value)) (srand) (set! opt-xtdirname (rand-truth-value)) (srand) (set! opt-macos (rand-truth-value)) (srand) (set! opt-saves (rand-truth-value)) (srand) (set! opt-generate (rand-truth-value)) (srand) (set! opt-vimswap (rand-truth-value))))
         (when opt-1Grow (begin (set! opt-basename #t) (set! opt-extname #t) (set! opt-filename #t)))
         (when opt-2Grow (begin (set! opt-dirname #t) (set! opt-xtdirname #t)))
         (when opt-3Grow (begin (set! opt-basename #t) (set! opt-extname #t) (set! opt-filename #t) (set! opt-dirname #t) (set! opt-xtdirname #t)))
