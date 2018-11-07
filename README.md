@@ -65,17 +65,17 @@ $ sudo make install
 
 * * *
 
-|&nbsp;&nbsp;Mode&nbsp;Number&nbsp;&nbsp;| _Description of Grow Level_ 
-|:---------------------------------------|-----------------------------------------------------------------------
-| --0Grow, -0                            | _All_ command-line flags are randomly enabled
-| --1Grow, -1                            | `--basename`, `--extname`, `--filename`
-| --2Grow, -2                            | `--dirname`, `--xtdirname`
-| --3Grow, -3                            | `--basename`, `--extname`, `--filename`, `--dirname`, `--xtdirname`, 
-| --4Grow, -4                            | `--macos`, `--saves`
-| --5Grow, -5                            | `--generate`, `--vimswap`
-| --6Grow, -6                            | `--macos`, `--saves`, `--generate`, `--vimswap`
-| --7Grow, -7                            | `--Combos 1`, `--Powerset 1`, `--Kperms 1`, `--Traverse 1`
-| --8Grow, -8                            | `--basename`, `--extname`, `--filename`, `--dirname`
+|&nbsp;&nbsp;&nbsp;_Command&nbsp;Line_&nbsp;Flag&nbsp;&nbsp;| _Description of Grow Level_ 
+|:-------------------------------------------|-----------------------------------------------------------------------
+| `--0Grow`, `-0`                            | _All_ command-line flags are randomly enabled
+| `--1Grow`, `-1`                            | <details><summary>`--basename`, `--extname`, `--filename`</summary>blah blah</details>
+| `--2Grow`, `-2`                            | `--dirname`, `--xtdirname`
+| `--3Grow`, `-3`                            | `--basename`, `--extname`, `--filename`, `--dirname`, `--xtdirname`, 
+| `--4Grow`, `-4`                            | `--macos`, `--saves`
+| `--5Grow`, `-5`                            | `--generate`, `--vimswap`
+| `--6Grow`, `-6`                            | `--macos`, `--saves`, `--generate`, `--vimswap`
+| `--7Grow`, `-7`                            | `--Combos 1`, `--Powerset 1`, `--Kperms 1`, `--Traverse 1`
+| `--8Grow`, `-8`                            | `--basename`, `--extname`, `--filename`, `--dirname`
 
 * * *
 
