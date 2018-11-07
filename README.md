@@ -81,7 +81,7 @@ $ sudo make install
 
 ## License
 
-`pathgro` is licensed under the GNU Lesser General Public License v3.0. [See COPYING.txt for more information](https://github.com/decal/pathgro/blob/master/COPYING.txt "GPLv3").
+`pathgro` is licensed under the GNU Lesser General Public License v3.0. See `[COPYING.txt](https://github.com/decal/pathgro/blob/master/COPYING.txt "GPLv3")` for more information.
 
 
 ## Test
