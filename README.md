@@ -82,3 +82,18 @@ $ sudo make install
 ## License
 
 `pathgro` is licensed under the GNU Lesser General Public License v3.0. [See COPYING.txt for more information](https://github.com/decal/pathgro/blob/master/COPYING.txt "GPLv3").
+
+
+## Test
+
+```flowchart
+st=>start: Start:>http://www.google.com[blank]
+e=>end:>http://www.google.com
+op1=>operation: My Operation
+sub1=>subroutine: My Subroutine
+cond=>condition: Yes or No?:>http://www.google.com
+io=>inputoutput: catch something…
+st->op1->cond
+cond(yes)->io->e
+cond(no)->sub1(right)->op1
+```
