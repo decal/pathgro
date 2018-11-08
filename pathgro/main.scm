@@ -86,7 +86,7 @@
         (when opt-4Grow (begin (set! opt-macos #t) (set! opt-saves #t)))
         (when opt-5Grow (begin (set! opt-generate #t) (set! opt-vimswap #t)))
         (when opt-6Grow (begin (set! opt-macos #t) (set! opt-saves #t) (set! opt-generate #t) (set! opt-vimswap #t)))
-        (when opt-7Grow (begin (set! opt-Combos 1) (set! opt-Powerset 1) (set! opt-Kperms 1) (set! opt-Traverse 1)))
+        (when opt-7Grow (begin (set! opt-Combos 1) (set! opt-Kperms 1) (set! opt-Traverse 1)))
         (when opt-8Grow (begin (set! opt-basename #t) (set! opt-extname #t) (set! opt-filename #t) (set! opt-dirname #t)
           (set! opt-xtdirname #t) (set! opt-macos #t) (set! opt-saves #t) (set! opt-generate #t) (set! opt-vimswap #t)
           (set! opt-Combos 1) (set! opt-Powerset 1) (set! opt-Kperms 1) (set! opt-Traverse 1)))

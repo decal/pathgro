@@ -67,33 +67,21 @@ $ sudo make install
 
 |&nbsp;&nbsp;&nbsp;_Command&nbsp;Line_&nbsp;Flag&nbsp;&nbsp;| _Description of Grow Level_ 
 |:-------------------------------------------|-----------------------------------------------------------------------
-| `--0Grow`, `-0`                            | _All_ command-line flags are randomly enabled
-| `--1Grow`, `-1`                            | <details><summary>`--basename`, `--extname`, `--filename`</summary>blah blah</details>
-| `--2Grow`, `-2`                            | `--dirname`, `--xtdirname`
-| `--3Grow`, `-3`                            | `--basename`, `--extname`, `--filename`, `--dirname`, `--xtdirname`, 
-| `--4Grow`, `-4`                            | `--macos`, `--saves`
-| `--5Grow`, `-5`                            | `--generate`, `--vimswap`
-| `--6Grow`, `-6`                            | `--macos`, `--saves`, `--generate`, `--vimswap`
-| `--7Grow`, `-7`                            | `--Combos 1`, `--Powerset 1`, `--Kperms 1`, `--Traverse 1`
+| `--0Grow`, `-0`                            | _all_ command-line flags are randomly enabled
+| `--1Grow`, `-1`                            | <details><summary>bases, extensions and full file names</summary>`--basename`, `--extname`, `--filename`</details>
+| `--2Grow`, `-2`                            | <details><summary>file extensions as directories and standalone directories</summary>`--dirname`, `--xtdirname`</details>
+| `--3Grow`, `-3`                            | <details><summary>bases, extensions, full file names, standalone directories and extensions as directories</summary>`--basename`, `--extname`, `--filename`, `--dirname`, `--xtdirname`</details> 
+| `--4Grow`, `-4`                            | <details><summary>auto-save and backup file names</summary>`--macos`, `--saves`</details>
+| `--5Grow`, `-5`                            | <details><summary>vim swap file names, one-byte base name appendages and extensions</summary>`--generate`, `--vimswap`</details>
+| `--6Grow`, `-6`                            | <details><summary>`--4Grow` and `--5Grow` togther</summary>`--macos`, `--saves`, `--generate`, `--vimswap`</details>
+| `--7Grow`, `-7`                            | <details><summary>`--Combos 2`, `--Kperms 2`, `--Traverse 2`</summary>
 | `--8Grow`, `-8`                            | `--basename`, `--extname`, `--filename`, `--dirname`
 
 * * *
+
+Note that depending upon the command-line usage, the output may still need to be uniqued. 
 
 ## License
 
 `pathgro` is licensed under the GNU Lesser General Public License v3.0. See [`COPYING.txt`](https://github.com/decal/pathgro/blob/master/COPYING.txt "GPLv3") for more information.
 
-
-## Test
-
-```flowchart
-st=>start: Start:>http://www.google.com[blank]
-e=>end:>http://www.google.com
-op1=>operation: My Operation
-sub1=>subroutine: My Subroutine
-cond=>condition: Yes or No?:>http://www.google.com
-io=>inputoutput: catch something…
-st->op1->cond
-cond(yes)->io->e
-cond(no)->sub1(right)->op1
-```
