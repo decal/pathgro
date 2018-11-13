@@ -2,7 +2,7 @@
   <tr>
     <td>
       <p align="center">
-        <img height="32%" width="32%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/pathgro-logo.png" alt="PathGro Logo: DirBuster Path Food" crossorigin="anonymous" />
+        <img height="32%" width="32%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/pathgro-logo.png" alt="PathGro Logo [Miracle-Gro(tm) Spoof]" title="DirBuster Path Food" crossorigin="anonymous" integrity="sha384-n6Qkb58C/K/kkDL0LNpsU9Vx0z6vTSQ9bjZx4VlrRE3FS7LH6J0TKqpm9h1S1L/1" />
       </p>
     </td>
   </tr>
@@ -14,15 +14,15 @@
 larger sets. It is a tool that freely commingles pathname pieces to generate new
 omnifarious string mappings. It is designed to maximize attack surface coverage
 when testing software components that take pathnames as input, ie. "dirbusting."
-It is a set of GNU Guile modules with a command-line interface.
+It is a set of [GNU Guile](https://gnu.org/software/guile "GNU's programming and extension language") modules with a command-line interface.
 
 ## Examples
 
 General overview of the functionality:
 
-<img height="65%" width="65%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/pathgro-demo.gif" alt="Terminal Command Line Typescript Demonstrating Execution of PathGro Tool" crossorigin="anonymous" />
+<img height="65%" width="65%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/pathgro-demo.svg" alt="Terminal Recording Demonstrating Command Line Execution of PathGro Tool" title="Various Examples of Growing Path Lists" crossorigin="anonymous" />
 
-Note that `pathgro -C1` and `pathgro -K1` will generate equivalent lists according to their definitions.
+Note that `pathgro --Combos 1` and `pathgro --Kperms 1` will generate equivalent lists according to their definitions.
 
 ## Dependencies
 
@@ -61,7 +61,7 @@ $ sudo make install
 
 ## Usage
 
-<img height="50%" width="50%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/pathgro-usage.png" alt="PathGro Command Line Usage" crossorigin="anonymous" />
+<img height="50%" width="50%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/pathgro-usage.png" alt="PathGro Tool Usage Summary" title="PathGro Command Line Options" crossorigin="anonymous" integrity="sha384-JohFyrL8uTZrufLN1XfVqcfhdngDWP2l/KJffx/D7PYtNNzohlEIO/biKyW2N6A8" />
 
 * * *
 
