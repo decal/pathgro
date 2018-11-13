@@ -20,7 +20,7 @@ It is a set of [GNU Guile](https://gnu.org/software/guile "GNU's programming and
 
 General overview of the functionality:
 
-<img height="65%" width="65%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/pathgro-demo.svg" alt="Terminal Recording Demonstrating Command Line Execution of PathGro Tool" title="Various Examples of Growing Path Lists" crossorigin="anonymous" />
+<img src="https://raw.githubusercontent.com/decal/pathgro/master/assets/pathgro-demo.svg" alt="Terminal Recording Demonstrating Command Line Execution of PathGro Tool" title="Various Examples of Growing Path Lists" /> 
 
 Note that `pathgro --Combos 1` and `pathgro --Kperms 1` will generate equivalent lists according to their definitions.
 
