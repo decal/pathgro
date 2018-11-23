@@ -4,15 +4,15 @@
 #
 
 # Global guile share folder
-export USR_GUILE_SHARE=/usr/share/guile
+export USR_GUILE_SHARE="/usr/share/guile"
 # Local guile cache folder
-export HOME_CACHE_GUILE=~/.cache/guile
+export HOME_CACHE_GUILE="$HOME/.cache/guile"
 # Path to the `linuxbrew` cellar folder
-export HOME_LINUXBREW_GUILE=~/.linuxbrew/Cellar/guile
+export HOME_LINUXBREW_GUILE="$HOME/.linuxbrew/Cellar/guile"
 # Location where `git clone` created the pathgro repository 
-#export PATHGRO_GIT_REPO=~/GIT/decal/pathgro
+export PATHGRO_GIT_REPO="$HOME/GIT/decal/pathgro"
 # Location where pathgro libraries are installed
-export PATHGRO_LIB_GUILE=/usr/lib/x86_64-linux-gnu/guile/2.0/site-ccache
+export PATHGRO_LIB_GUILE="/usr/lib/x86_64-linux-gnu/guile/2.0/site-ccache"
 
 [ "$USR_SHARE_GUILE" ] && find "$USR_GUILE_SHARE" -type d -name 'pathgro' -exec rm -frdv {} \;
 [ "$HOME_CACHE_GUILE" ] && find "$HOME_CACHE_GUILE" -type d -name 'pathgro' -exec rm -frdv {} \;

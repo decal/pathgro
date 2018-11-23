@@ -1,3 +1,9 @@
+* use `guile-coroutines` for `lazy-flatten`
+
+* support date string formatting
+  - `~d/~y` => 31/18
+  - `~b/~A/~Y` => Sun/Mar/2018
+
 * split and combine on dashes and underscores 
   - by default, but also allow user-specified split/combine chars
   - also recombine by just dropping the delimiter
@@ -8,7 +14,7 @@
   - all upper-case, or
   - all lower-case
 
-* generate directory traversal strings
+* generate percent-encoded paths
 
 * split and combine on variable length substrings specified by the user
 
@@ -18,6 +24,8 @@
   - camelCase => PascalCase
   - snake_case => TitleCase
   - etc.
+
+* include support for configuration file `pathgro.conf`
 
 * operate on GET query variables and/or values
 

@@ -1,18 +1,15 @@
 (define-module (pathgro base path-combos)
-               #:export (combos path-combos)
-               #:use-module (ice-9 common-list))
+  #:export (combos path-combos)
+  #:use-module (ice-9 common-list))
 
-(use-modules (pathgro base combine-paths))
-(use-modules (pathgro base path-strings))
-(use-modules (pathgro util stdio))
-(use-modules (pathgro util clean-list))
+(use-modules (pathgro base combine-paths) (pathgro base path-strings))
+(use-modules (pathgro util stdio) (pathgro util clean-list))
 
 (define (combos m lst)
-  (cond ((= m 0) '(()))
+  (cond ((zero? m) '(()))
         ((null? lst) '())
-        (else (append (map (lambda (y) (cons (car lst) y))
-                           (combos (- m 1) (cdr lst)))
-                      (combos m (cdr lst))))))
+        (else (append (map (lambda (y) (cons (car lst) y)) (combos (- m 1) (cdr lst))) 
+		      (combos m (cdr lst))))))
 
 (define (path-combos cdepth cfiles dirns)
   (letrec*
