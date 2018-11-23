@@ -1,7 +1,7 @@
 (define-module (pathgro util clean-list)
                #:use-module (ice-9 common-list)
                #:use-module (srfi srfi-1)
-               #:export (rm2deep pathcnt output-list suniq flatten blank? empty? unblank unempty unempty-unblank unblank-unempty ununspec clean))
+               #:export (rm2deep pathcnt output-list suniq flatten blank? empty? unblank unempty clean))
 
 (use-modules (pathgro util stdio))
 (use-modules (pathgro base path-slashes))
@@ -26,12 +26,6 @@
     ;((null? e) '())
     ;(else (list e))))
 
-;(define unspecified (begin))
-;(define (unspecified? v) (eq? unspecified) v)
-
-(define (ununspec l) (noop l))
-  ;(delete unspecified l))
-
 (define (empty? l)
   (eq? '()))
 
@@ -47,12 +41,12 @@
 (define (remove-dups l)
   (cond
     [(empty? l) '()]
-    [(empty? (rest l)) l]
+    [(empty? (cdr l)) l]
     [else
-      (let ([i (first l)])
-        (if (equal? i (first (rest l)))
-          (remove-dups (rest l))
-          (cons i (remove-dups (rest l)))))]))
+      (let ([i (car l)])
+        (if (equal? i (car (cdr l)))
+          (remove-dups (cdr l))
+          (cons i (remove-dups (cdr l)))))]))
 
 (define (suniq e)
   (if (null? e)
@@ -62,10 +56,10 @@
         (suniq (filter (lambda (x) (not (string=? x ce))) (cdr e)))
         (cons ce (suniq (filter (lambda (x) (not (string=? x ce))) (cdr e))))))))
 
-(define (unempty-unblank l)
-  (filter (lambda (e) (not (or (eq? e '()) (string=? "" e)))) alist))
+;(define (unempty-unblank l)
+;  (filter (lambda (e) (not (or (eq? e '()) (string=? "" e)))) l))
 
-(define (unblank-unempty l) unempty-unblank)
+;(define (unblank-unempty l) unempty-unblank)
 
 (define (clean l)
   (delete-duplicates!

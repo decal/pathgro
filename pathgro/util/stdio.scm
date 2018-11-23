@@ -1,6 +1,5 @@
 (define-module (pathgro util stdio)
-  #:export (stdin stdout stderr fprintln println fnewlines newlines ununspec 
-                  empty? unblank blank? unempty false? true?))
+  #:export (stdin stdout stderr fprintln println fnewlines newlines empty? unblank blank? unempty false? true?)) 
 
 (define (fprintln astr aport)
   (display astr aport)
@@ -20,12 +19,6 @@
 
 (define (newlines acnt)
   (fnewlines acnt stdout))
-
-;(define unspecified (begin))
-;(define (unspecified? v) (eq? unspecified) v)
-
-(define (ununspec l) (noop l))
-  ;(delete unspecified l))
 
 (define (empty? l)
   (eq? '()))

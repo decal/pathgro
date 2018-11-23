@@ -1,6 +1,3 @@
-* fix bug with larger powerset depths
-  - likely related to some process resource limit or guile heap size
-
 * split and combine on dashes and underscores 
   - by default, but also allow user-specified split/combine chars
   - also recombine by just dropping the delimiter
@@ -22,8 +19,6 @@
   - snake_case => TitleCase
   - etc.
 
-* include support for a configuration file, `pathgro.conf` perhaps?
-
 * operate on GET query variables and/or values
 
 * include support for queries specified in the fragment identifier
@@ -31,7 +26,7 @@
 
 * use a command-line option for random and/or semi-random shuffles
 
-* use command-line flags for k-permutations, n-choose-r, derangements, etc.
+* implement derangements as set operation in addition to `power-set`, `n-choose-r`, etc.
 
 * accept a command-line flag for each expansion type (and create useful groups of these)
 

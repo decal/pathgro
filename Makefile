@@ -16,8 +16,8 @@ PREFIX := ${HOME}
 
 SCRIPTDIR := scripts
 
-CONFIG         := pathgro.conf 
-CONFIG_DESTDIR := ${DESTDIR}${PREFIX}/share/${PROGNAME}
+CONFIG         := pathgro.conf
+CONFIG_DESTDIR := ${HOME}/share
 
 GUILEINC := ${DESTDIR}$(shell guile -c "(display (%site-dir))")
 GUILELIB := ${DESTDIR}$(shell guile -c "(display (%site-ccache-dir))")
@@ -40,27 +40,34 @@ all:
 	${OBJ}
 
 install:
-	@mkdir -p ${GUILEINC}
-	@echo installing source files in ${GUILEINC}/${PROGNAME}
-	@cp -p --parents ${SRC} ${GUILEINC}
+#	@mkdir -p ${GUILEINC}
+#	@echo installing source files in ${GUILEINC}/${PROGNAME}
+#	@cp -a ${SRC} ${GUILEINC}
 	
-	@mkdir -p ${GUILELIB}
-	@echo installing object files in ${GUILELIB}/${PROGNAME}
-	@cp -p --parents ${OBJ} ${GUILELIB}
-	
-	@mkdir -p ${DESTDIR}${PREFIX}/bin
-	@echo installing executable script in ${DESTDIR}${PREFIX}/bin
-	@cp -p ${SCRIPTDIR}/${PROGNAME} ${DESTDIR}${PREFIX}/bin/${PROGNAME}
+#	@mkdir -p ${GUILELIB}
+#	@echo installing object files in ${GUILELIB}/${PROGNAME}
+#	@cp -a ${OBJ} ${GUILELIB}
 
-	@mkdir -p ${CONFIG_DESTDIR}
+	@echo "installing object files in ${HOME}/pathgro"
+	@echo "This environment variable assignment must be in your shell initialization: GUILE_LOAD_PATH=\"$HOME/pathgro\""
+	@cp -av -- pathgro "${HOME}/pathgro"
+	@chmod -- 0700 "${HOME}/pathgro"
+	
+	@mkdir -p -- "${HOME}/bin"
+	@chmod -- 0700 "${HOME}/bin"
+	@echo installing executable script in ${HOME}/bin
+	@cp -a -- "${SCRIPTDIR}/${PROGNAME}" "${HOME}/bin"
+
+	@mkdir -p -- "${CONFIG_DESTDIR}"
+	@chmod -- 0700 "${CONFIG_DESTDIR}"
 	@echo installing default config in ${CONFIG_DESTDIR}
-	@cp -p ${CONFIG} ${CONFIG_DESTDIR}/${CONFIG}
+	@cp -a -- "${CONFIG}" "${CONFIG_DESTDIR}"
 
 uninstall:
-	@rm -rf ${GUILEINC}/${PROGNAME}
-	@rm -rf ${GUILELIB}/${PROGNAME}
-	@rm -f  ${DESTDIR}${PREFIX}/bin/${PROGNAME}
-	@rm -rf ${CONFIG_DESTDIR}
+#	@rm -rf -- "${GUILEINC}/${PROGNAME}"
+#	@rm -rf -- "${GUILELIB}/${PROGNAME}"
+	@rm -f  -- "${HOME}/bin/${PROGNAME}" "${CONFIG_DESTDIR}/${CONFIG}"
+	@rm -rf -- "${HOME}/pathgro"
 
 clean:
 	@rm ${OBJ}
