@@ -48,24 +48,31 @@ install:
 #	@echo installing object files in ${GUILELIB}/${PROGNAME}
 #	@cp -a ${OBJ} ${GUILELIB}
 
-	@echo "installing object files in ${HOME}/pathgro"
-	@echo "This environment variable assignment must be in your shell initialization: GUILE_LOAD_PATH=\"$HOME/pathgro\""
+	@echo
+	@echo "Installing object files in ${HOME}/pathgro"
+	@echo 
 	@cp -av -- pathgro "${HOME}/pathgro"
 	@chmod -- 0700 "${HOME}/pathgro"
 	
 	@mkdir -p -- "${HOME}/bin"
 	@chmod -- 0700 "${HOME}/bin"
-	@echo installing executable script in ${HOME}/bin
+	@echo 
+	@echo "Installing executable script from ${SCRIPTDIR}/${PROGNAME} into ${HOME}/bin"
 	@cp -a -- "${SCRIPTDIR}/${PROGNAME}" "${HOME}/bin"
+	@echo
+	@echo "Don't forget to add these statements to your shell initialization:"
+	@echo
+	@echo export GUILE_LOAD_PATH=${HOME}/pathgro
+	@echo export PATH=${PATH}:${HOME}/bin
+	@echo 
 
 uninstall:
-	@rm -rf ${GUILEINC}/${PROGNAME}
-	@rm -rf ${GUILELIB}/${PROGNAME}
-	@rm -f  ${DESTDIR}${PREFIX}/bin/${PROGNAME}
-	#@rm -rf ${CONFIG_DESTDIR}
+	-rm -rf ${GUILEINC}/${PROGNAME}
+	-rm -rf ${GUILELIB}/${PROGNAME} 
+	-rm -f  ${DESTDIR}${PREFIX}/bin/${PROGNAME} 
 
 clean:
-	@rm ${OBJ}
+	-rm ${OBJ} 2>/dev/null
 
 test:
 	-pathgro -b tests/test-paths.txt
