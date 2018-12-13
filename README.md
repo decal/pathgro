@@ -68,15 +68,15 @@ $ sudo make install
 
 |&nbsp;&nbsp;&nbsp;_Command&nbsp;Line_&nbsp;Flag&nbsp;&nbsp;| _Description of Grow Level_ 
 |:-------------------------------------------|-----------------------------------------------------------------------
-| `--0Grow`, `-0`                            | _all_ command-line flags are randomly enabled
+| `--0Grow`, `-0`                            | <details><summary>each command-line flag has a 50% chance of being enabled randomly</summary>`--basename`, `--dirname`, `--extname`, `--filename`, `--generate`, `--macos`, `--saves`, `--vimswap`, `--xtdirname`</details>
 | `--1Grow`, `-1`                            | <details><summary>bases, extensions and full file names</summary>`--basename`, `--extname`, `--filename`</details>
 | `--2Grow`, `-2`                            | <details><summary>file extensions as directories and standalone directories</summary>`--dirname`, `--xtdirname`</details>
 | `--3Grow`, `-3`                            | <details><summary>bases, extensions, full file names, standalone directories and extensions as directories</summary>`--basename`, `--extname`, `--filename`, `--dirname`, `--xtdirname`</details> 
 | `--4Grow`, `-4`                            | <details><summary>auto-save and backup file names</summary>`--macos`, `--saves`</details>
 | `--5Grow`, `-5`                            | <details><summary>vim swap file names, one-byte base name appendages and extensions</summary>`--generate`, `--vimswap`</details>
 | `--6Grow`, `-6`                            | <details><summary>`--4Grow` and `--5Grow` togther</summary>`--macos`, `--saves`, `--generate`, `--vimswap`</details>
-| `--7Grow`, `-7`                            | <details><summary>`--Combos 2`, `--Kperms 2`, `--Traverse 2`</summary>
-| `--8Grow`, `-8`                            | `--basename`, `--extname`, `--filename`, `--dirname`
+| `--7Grow`, `-7`                            | <details><summary>combinations and permutations of directories two levels deep with traversals of identical depth</summary>`--Combos 2`, `--Kperms 2`, `--Traverse 2`</details>
+| `--8Grow`, `-8`                            | <details><summary>enable each individual flag while passing the value `1` to each set operation</summary>`--basename`, `--extname`, `--filename`, `--dirname`, `--xtdirname`, `--macos`, `--saves`, `--generate`, `--vimswap`, `--Combos`, `--Powerset`, `--Kperms`, `--Traverse`</summary> --basename`, `--extname`, `--filename`, `--dirname`, `--xtdirname`, `--macos`, `--saves`, `--generate`, `--vimswap`, `--Combos`, `--Powerset`, `--Kperms`, `--Traverse`</details>
 
 * * *
 
