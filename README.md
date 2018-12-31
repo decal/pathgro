@@ -75,7 +75,7 @@ $ sudo make install
 | `--5Grow`, `-5` | <details><summary>vim swap file names, one-byte base name appendages and extensions</summary>`--generate`, `--vimswap`</details>
 | `--6Grow`, `-6` | <details><summary>`--4Grow` and `--5Grow` togther</summary>`--macos`, `--saves`, `--generate`, `--vimswap`</details>
 | `--7Grow`, `-7` | <details><summary>combinations and permutations of folders two levels deep with traversals of same depth</summary>`--Combos 2`, `--Kperms 2`, `--Traverse 2`</details>
-| `--8Grow`, `-8` | <details><summary>enable each individual flag while passing the value `1` to each set operation</summary>`--basename`, `--extname`, `--filename`, `--dirname`, `--xtdirname`, `--macos`, `--saves`, `--generate`, `--vimswap`, `--Combos`, `--Powerset`, `--Kperms`, `--Traverse`</summary> --basename`, `--extname`, `--filename`, `--dirname`, `--xtdirname`, `--macos`, `--saves`, `--generate`, `--vimswap`, `--Combos`, `--Powerset`, `--Kperms`, `--Traverse`</details>
+| `--8Grow`, `-8` | <details><summary>enable each individual flag while passing the value `1` to each set operation</summary>`--basename`, `--extname`, `--filename`, `--dirname`, `--xtdirname`, `--macos`, `--saves`, `--generate`, `--vimswap`, `--Combos`, `--Powerset`, `--Kperms`, `--Traverse`</summary> `--basename`, `--extname`, `--filename`, `--dirname`, `--xtdirname`, `--macos`, `--saves`, `--generate`, `--vimswap`, `--Combos`, `--Powerset`, `--Kperms`, `--Traverse`</details>
 
 * * *
 
