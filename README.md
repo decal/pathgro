@@ -20,8 +20,7 @@ It is a set of [GNU Guile](https://gnu.org/software/guile "GNU's programming and
 
 General overview of the functionality:
 
-[![asciicast](https://asciinema.org/a/InUx4vKTr0cUYyVYA5jlzVtZi.svg)](https://asciinema.org/a/InUx4vKTr0cUYyVYA5jlzVtZi)
-<!-- <img src="https://raw.githubusercontent.com/decal/pathgro/master/assets/pathgro-demo.svg" alt="Terminal Recording Demonstrating Command Line Execution of PathGro Tool" title="Various Examples of Growing Path Lists" />  -->
+[![PathGro Usage Examples](https://asciinema.org/a/InUx4vKTr0cUYyVYA5jlzVtZi.svg "Terminal Recording Demonstrating Command Line Execution of PathGro Tool")](https://asciinema.org/a/InUx4vKTr0cUYyVYA5jlzVtZi "Various Examples of Growing Path Lists")
 
 Note that `pathgro --Combos 1` and `pathgro --Kperms 1` will generate equivalent lists according to their definitions.
 
@@ -68,19 +67,20 @@ $ sudo make install
 
 |&nbsp;&nbsp;&nbsp;_Command&nbsp;Line_&nbsp;Flag&nbsp;&nbsp;| _Description of Grow Level_ 
 |:-------------------------------------------|-----------------------------------------------------------------------
-| `--0Grow`, `-0`                            | <details><summary>each command-line flag has a 50% chance of being enabled randomly</summary>`--basename`, `--dirname`, `--extname`, `--filename`, `--generate`, `--macos`, `--saves`, `--vimswap`, `--xtdirname`</details>
-| `--1Grow`, `-1`                            | <details><summary>bases, extensions and full file names</summary>`--basename`, `--extname`, `--filename`</details>
-| `--2Grow`, `-2`                            | <details><summary>file extensions as directories and standalone directories</summary>`--dirname`, `--xtdirname`</details>
-| `--3Grow`, `-3`                            | <details><summary>bases, extensions, full file names, standalone directories and extensions as directories</summary>`--basename`, `--extname`, `--filename`, `--dirname`, `--xtdirname`</details> 
-| `--4Grow`, `-4`                            | <details><summary>auto-save and backup file names</summary>`--macos`, `--saves`</details>
-| `--5Grow`, `-5`                            | <details><summary>vim swap file names, one-byte base name appendages and extensions</summary>`--generate`, `--vimswap`</details>
-| `--6Grow`, `-6`                            | <details><summary>`--4Grow` and `--5Grow` togther</summary>`--macos`, `--saves`, `--generate`, `--vimswap`</details>
-| `--7Grow`, `-7`                            | <details><summary>combinations and permutations of directories two levels deep with traversals of identical depth</summary>`--Combos 2`, `--Kperms 2`, `--Traverse 2`</details>
-| `--8Grow`, `-8`                            | <details><summary>enable each individual flag while passing the value `1` to each set operation</summary>`--basename`, `--extname`, `--filename`, `--dirname`, `--xtdirname`, `--macos`, `--saves`, `--generate`, `--vimswap`, `--Combos`, `--Powerset`, `--Kperms`, `--Traverse`</summary> --basename`, `--extname`, `--filename`, `--dirname`, `--xtdirname`, `--macos`, `--saves`, `--generate`, `--vimswap`, `--Combos`, `--Powerset`, `--Kperms`, `--Traverse`</details>
+| `--0Grow`, `-0` | <details><summary>each command-line flag has a 50% chance of being enabled randomly</summary>`--basename`, `--dirname`, `--extname`, `--filename`, `--generate`, `--macos`, `--saves`, `--vimswap`, `--xtdirname`</details>
+| `--1Grow`, `-1` | <details><summary>bases, extensions and full file names</summary>`--basename`, `--extname`, `--filename`</details>
+| `--2Grow`, `-2` | <details><summary>file extensions as directories and standalone directories</summary>`--dirname`, `--xtdirname`</details>
+| `--3Grow`, `-3` | <details><summary>bases, extensions, full file names, standalone directories and extensions as directories</summary>`--basename`, `--extname`, `--filename`, `--dirname`, `--xtdirname`</details> 
+| `--4Grow`, `-4` | <details><summary>auto-save and backup file names</summary>`--macos`, `--saves`</details>
+| `--5Grow`, `-5` | <details><summary>vim swap file names, one-byte base name appendages and extensions</summary>`--generate`, `--vimswap`</details>
+| `--6Grow`, `-6` | <details><summary>`--4Grow` and `--5Grow` togther</summary>`--macos`, `--saves`, `--generate`, `--vimswap`</details>
+| `--7Grow`, `-7` | <details><summary>combinations and permutations of folders two levels deep with traversals of same depth</summary>`--Combos 2`, `--Kperms 2`, `--Traverse 2`</details>
+| `--8Grow`, `-8` | <details><summary>enable each individual flag while passing the value `1` to each set operation</summary>`--basename`, `--extname`, `--filename`, `--dirname`, `--xtdirname`, `--macos`, `--saves`, `--generate`, `--vimswap`, `--Combos`, `--Powerset`, `--Kperms`, `--Traverse`</summary> --basename`, `--extname`, `--filename`, `--dirname`, `--xtdirname`, `--macos`, `--saves`, `--generate`, `--vimswap`, `--Combos`, `--Powerset`, `--Kperms`, `--Traverse`</details>
+| `--9Grow`, `-7.5` | <details><summary><code title="title" name="name" id="id">Test</code> <em title="title" name="name" id="id">Express</em> <em title="NodeJS" name="nodejs" id="nodeid">Node</em></summary</details>
 
 * * *
 
-Note that depending upon the command-line usage, the output may still need to be uniqued. 
+> Note that depending upon the command-line invocation's combined option flags, the results may still need to be uniqued by piping the output stream to `sort -u`. 
 
 ## License
 
