@@ -65,9 +65,9 @@ $ sudo make install
 
 * * *
 
-|&nbsp;&nbsp;&nbsp;_Command&nbsp;Line_&nbsp;Flag&nbsp;&nbsp;| _Description of Grow Level_ 
+|&nbsp;&nbsp;&nbsp;_Command&nbsp;Line&nbsp;Flag_&nbsp;&nbsp;| _Description of Grow Level_ 
 |:-------------------------------------------|-----------------------------------------------------------------------
-| `--0Grow`, `-0` | <details><summary>each command-line flag has a 50% chance of being enabled randomly</summary>`--basename`, `--dirname`, `--extname`, `--filename`, `--generate`, `--macos`, `--saves`, `--vimswap`, `--xtdirname`</details>
+| `--0Grow`, `-0` | <details><summary>each command-line flag has a 50% chance of being enabled randomly</summary><br />`--basename`, `--dirname`, `--extname`, `--filename`, `--generate`, `--macos`, `--saves`, `--vimswap`, `--xtdirname`</details>
 | `--1Grow`, `-1` | <details><summary>bases, extensions and full file names</summary>`--basename`, `--extname`, `--filename`</details>
 | `--2Grow`, `-2` | <details><summary>file extensions as directories and standalone directories</summary>`--dirname`, `--xtdirname`</details>
 | `--3Grow`, `-3` | <details><summary>bases, extensions, full file names, standalone directories and extensions as directories</summary>`--basename`, `--extname`, `--filename`, `--dirname`, `--xtdirname`</details> 
@@ -83,5 +83,7 @@ $ sudo make install
 
 ## License
 
-`pathgro` is licensed under the GNU Lesser General Public License v3.0. See [`COPYING.txt`](https://github.com/decal/pathgro/blob/master/COPYING.txt "GPLv3") for more information.
+`pathgro` is licensed under the [GNU Lesser General Public License](https://www.gnu.org/licenses/lgpl.html) v3.0. See [`COPYING.txt`](https://github.com/decal/pathgro/blob/master/COPYING.txt "GPLv3") for more information.
+
+<img height="40%" width="40%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/lgplv3-logo.png" alt="LGPLv3" title="GNU Lesser General Public License" crossorigin="anonymous" integrity="sha512-P07UklyWF125WUM4hD18LQNbAfeAL4oSqsQhtaNQsWYZpgtsDaUfo4HIIX9OFQepwodXN2w+XA+oVS5LjQfGrA==" />
 
