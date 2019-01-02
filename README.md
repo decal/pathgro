@@ -38,12 +38,12 @@ installing a package called `guile` may not be sufficient.\
 ``` shell
 # install the required guile binaries
 $ sudo apt install guile guile-2.0-dev
-
 # or alternatively..
 $ sudo apt install linuxbrew-wrapper && brew install guile 
-# don't forget to add ~/.linuxbrew/Cellar/guile/2.x.x/bin to PATH
+# don't forget to add `~/.linuxbrew/Cellar/guile/2.x.x/bin` to `PATH`
+# on macOS you can simply `brew install guile` after installing Homebrew from brew.sh
 
-# clone the reposityory:
+# clone the repository:
 $ git clone https://github.com/decal/pathgro
 
 # change working directory to pathgro:
