@@ -81,9 +81,11 @@ $ sudo make install
 
 > Note that depending upon the command-line invocation's combined option flags, the results may still need to be uniqued by piping the output stream to `sort -u`. 
 
+  
 ## License
 
 `pathgro` is licensed under version 3 of the [GNU Lesser General Public License](https://www.gnu.org/licenses/lgpl.html). See [`COPYING.txt`](https://github.com/decal/pathgro/blob/master/COPYING.txt "GPLv3") for more information.
 
-<p align="right"><img height="20%" width="20%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/lgplv3-logo.png" alt="LGPLv3" title="GNU Lesser General Public License" crossorigin="anonymous" integrity="sha512-P07UklyWF125WUM4hD18LQNbAfeAL4oSqsQhtaNQsWYZpgtsDaUfo4HIIX9OFQepwodXN2w+XA+oVS5LjQfGrA==" /></p>
+  
+<br /><p align="right"><img height="20%" width="20%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/lgplv3-logo.png" alt="LGPLv3" title="GNU Lesser General Public License" crossorigin="anonymous" integrity="sha512-P07UklyWF125WUM4hD18LQNbAfeAL4oSqsQhtaNQsWYZpgtsDaUfo4HIIX9OFQepwodXN2w+XA+oVS5LjQfGrA==" /></p>  
 
