@@ -81,6 +81,9 @@ $ sudo make install
 
 > Note that depending upon the command-line invocation's combined option flags, the results may still need to be uniqued by piping the output stream to `sort -u`. 
 
+* * *
+
+<br />
   
 ## License
 
