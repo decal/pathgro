@@ -22,20 +22,21 @@
 (define (calc-kperms-helper n k)  ; lists will be from 0..(n-1)
   (define pl '()) ; all permutations list;
     (let loop ((ol '())) ; one permutation list; 
-      (define a (random n))  ; 0 to n-1
+      ;(define a (random n))  ; 0 to n-1
+      (define a (- n 1))
       (if (member a ol) 
-	(loop ol)
+	      (loop ol)
         (begin 
           (set! ol (cons a ol))
           (if (< (length ol) k) 
-	      (loop ol)
-	      (if (member ol pl) 
-		(loop '())
-		(begin 
-		  (set! pl (cons ol pl))
-		  (if (< (length pl) (/ (factorial n) (factorial (- n k))))
-		      (loop '())
-		      pl))))))))
+	          (loop ol)
+	          (if (member ol pl) 
+		          (loop '())
+		          (begin 
+		            (set! pl (cons ol pl))
+		            (if (< (length pl) (/ (factorial n) (factorial (- n k))))
+		              (loop '())
+		              pl))))))))
 
 (define (calc-kperms n k)
   (define (calc-kperms-iter n k x)
