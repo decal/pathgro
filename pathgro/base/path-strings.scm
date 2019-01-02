@@ -1,6 +1,6 @@
 (define-module (pathgro base path-strings)
   #:use-module (ice-9 common-list)
-  #:export (paths2words max-depth join-path append-strings drop-string-length drop-length drop-upto-length prepend-strings unappend-strings unprepend-strings)) 
+  #:export (paths2words max-depth join-path append-strings drop-string-length drop-length drop-downto-length drop-upto-length prepend-strings unappend-strings unprepend-strings)) 
 
 (define (prepend-strings astr slst)
   (if (null? slst)
@@ -36,6 +36,9 @@
   (filter (lambda (l) (= llen (length l))) llst))
 
 (define (drop-upto-length llen llst)
+  (filter (lambda (l) (>= llen (length l))) llst))
+
+(define (drop-downto-length llen llst)
   (filter (lambda (l) (>= llen (length l))) llst))
 
 (define (join-path alst)

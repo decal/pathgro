@@ -16,8 +16,10 @@
 (define (regexps-and-print s)
   (println (perform-slash-regexps s)))
 
-(define (output-list l)
-  (set! pathcnt (+ pathcnt (length (map regexps-and-print (clean l))))))
+(define (output-list n l)
+  (if (>= -1 n)
+    (set! pathcnt (+ pathcnt (length (map regexps-and-print (clean (drop-upto-length n l))))))
+    (set! pathcnt (+ pathcnt (length (map regexps-and-print (clean l)))))))
 
 (define (flatten x)
   (reverse!
