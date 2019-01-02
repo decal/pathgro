@@ -98,7 +98,10 @@ $ sudo make install
 ### Utilities
 
 * [mortalis13 / List-Folders](https://github.com/mortalis13/List-Folders "Lists files and subfolders of a selected local directory")
+> Lists files and subfolders of a selected local directory
+
 * [kdomasze / Folder-List](https://github.com/kdomasze/Folder-List "Lists all files and folders in a directory.")
+> Lists all files and folders in a directory.
 
 <br />
 
