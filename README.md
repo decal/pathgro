@@ -72,27 +72,35 @@ $ sudo make install
 |&nbsp;&nbsp;&nbsp;_Command&nbsp;Line&nbsp;Flag_&nbsp;&nbsp;| _Description of Grow Level_ 
 |:-------------------------------------------|-----------------------------------------------------------------------
 | `--Grow 0`, `-G0` | <br /><details><summary>each command-line flag has a 50% chance of being enabled randomly</summary><br />`--basename`, `--dirname`, `--extname`, `--filename`, `--generate`, `--macos`, `--saves`, `--vimswap`, `--xtdirname`</details><br />
-| `--Grow 1`, `-G1` | <details><summary>bases, extensions and full file names</summary>`--basename`, `--extname`, `--filename`</details>
-| `--Grow 2`, `-G2` | <details><summary>file extensions as directories and standalone directories</summary>`--dirname`, `--xtdirname`</details>
-| `--Grow 3`, `-G3` | <details><summary>bases, extensions, full file names, standalone directories and extensions as directories</summary>`--basename`, `--extname`, `--filename`, `--dirname`, `--xtdirname`</details> 
-| `--Grow 4`, `-G4` | <details><summary>auto-save and backup file names</summary>`--macos`, `--saves`</details>
-| `--Grow 5`, `-G5` | <details><summary>vim swap file names, one-byte base name appendages and extensions</summary>`--generate`, `--vimswap`</details>
-| `--Grow 6`, `-G6` | <details><summary>`-G4` and `-G5` togther</summary>`--macos`, `--saves`, `--generate`, `--vimswap`</details>
-| `--Grow 7`, `-G7` | <details><summary>combinations and permutations of folders two levels deep with traversals of same depth</summary>`--Combos 2`, `--Kperms 2`, `--Traverse 2`</details>
-| `--Grow 8`, `-G8` | <details><summary>enable each individual flag while passing the value `1` to each set operation</summary>`--basename`, `--extname`, `--filename`, `--dirname`, `--xtdirname`, `--macos`, `--saves`, `--generate`, `--vimswap`, `--Combos`, `--Powerset`, `--Kperms`, `--Traverse`</summary> `--basename`, `--extname`, `--filename`, `--dirname`, `--xtdirname`, `--macos`, `--saves`, `--generate`, `--vimswap`, `--Combos`, `--Powerset`, `--Kperms`, `--Traverse`</details>
+| `--Grow 1`, `-G1` | <br /><details><summary>bases, extensions and full file names</summary><br />`--basename`, `--extname`, `--filename`</details><br />
+| `--Grow 2`, `-G2` | <br /><details><summary>file extensions as directories and standalone directories</summary><br />`--dirname`, `--xtdirname`</details><br />
+| `--Grow 3`, `-G3` | <br /><details><summary>bases, extensions, full file names, standalone directories and extensions as directories</summary><br />`--basename`, `--extname`, `--filename`, `--dirname`, `--xtdirname`</details><br />
+| `--Grow 4`, `-G4` | <br /><details><summary>auto-save and backup file names</summary><br />`--macos`, `--saves`</details><br />
+| `--Grow 5`, `-G5` | <br /><details><summary>vim swap file names, one-byte base name appendages and extensions</summary><br />`--generate`, `--vimswap`</details><br />
+| `--Grow 6`, `-G6` | <br /><details><summary>`-G4` and `-G5` togther</summary><br />`--macos`, `--saves`, `--generate`, `--vimswap`</details><br />
+| `--Grow 7`, `-G7` | <br /><details><summary>combinations and permutations of folders two levels deep with traversals of same depth</summary><br />`--Combos 2`, `--Kperms 2`, `--Traverse 2`</details><br />
+| `--Grow 8`, `-G8` | <br /><details><summary>enable each individual flag while passing the value `1` to each set operation</summary><br />`--basename`, `--extname`, `--filename`, `--dirname`, `--xtdirname`, `--macos`, `--saves`, `--generate`, `--vimswap`, `--Combos`, `--Powerset`, `--Kperms`, `--Traverse`</summary> `--basename`, `--extname`, `--filename`, `--dirname`, `--xtdirname`, `--macos`, `--saves`, `--generate`, `--vimswap`, `--Combos`, `--Powerset`, `--Kperms`, `--Traverse`</details><br />
 
 * * *
 
 > Note that depending upon the command-line invocation's combined option flags, the results may still need to be uniqued by piping the output stream to `sort -u`. 
 
+<br />
+
 * * *
 
+<br />
+
 ## Related
+
+<br />
 
 ### Utilities
 
 * [mortalis13 / List-Folders](https://github.com/mortalis13/List-Folders "Lists files and subfolders of a selected local directory")
 * [kdomasze / Folder-List](https://github.com/kdomasze/Folder-List "Lists all files and folders in a directory.")
+
+<br />
 
 * * * 
 
@@ -106,6 +114,8 @@ $ sudo make install
 * [BlackArch / wordlistctl](https://github.com/BlackArch/wordlistctl "Fetch, install and search wordlist archives from websites and torrent peers.")
 * [imkzh / webwordlist](https://github.com/imkzh/webwordlist "a small wordlist that can be used for learning.")
 
+<br />
+
 * * *
 
 <br />
@@ -115,8 +125,11 @@ $ sudo make install
 * [fuzzdb-project / fuzzdb](https://github.com/fuzzdb-project/fuzzdb "Dictionary of attack patterns and primitives for black-box application fault injection and resource discovery.")
 * [danielmiessler / SecLists](https://github.com/danielmiessler/SecLists "SecLists is the security tester's companion. It's a collection of multiple types of lists used during security assessments, collected in one place. List types include usernames, passwords, URLs, sensitive data patterns, fuzzing payloads, web shells, and many more.")
 * [cujanovic / Content-Bruteforcing-Wordlist](https://github.com/cujanovic/Content-Bruteforcing-Wordlist "Wordlist for content(directory) bruteforce discovering with Burp or dirsearch")
+* [1N3 / IntruderPayloads](https://github.com/1N3/IntruderPayloads "A collection of Burpsuite Intruder payloads, BurpBounty payloads, fuzz lists, malicious file uploads and web pentesting methodologies and checklists.")
 * [decal / werdlists](https://github.com/decal/werdlists "Wordlists, Dictionaries and Other Data Sets for Writing Software Security Test Cases")
 * [samduy / path_traversal_payloads.txt](https://gist.github.com/samduy/8034b3227d472968e23f3817612a6729 "List of common path traversal attacks (can be used with BurpSuite Instruder)")
+
+<br />
 
 * * *
 
@@ -129,6 +142,8 @@ $ sudo make install
 * [maurosoria / dirsearch](https://github.com/maurosoria/dirsearch "Web path scanner")
 * [NoobieDog / Dir-Xcan](https://github.com/NoobieDog/Dir-Xcan "Python version of OWASP's DirBuster Application.")
 * [phra / nodebuster](https://github.com/phra/nodebuster "DirBuster for Node.js")
+
+<br />
 
 * * *
 
