@@ -1,4 +1,7 @@
 #!/usr/bin/env sh
+#
+# This is essentially emulation of a `make reinstall` target
+#
 
 make -j4 clean
 make -j4

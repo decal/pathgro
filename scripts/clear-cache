@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Remove cached bytecode files compiled with guild compile
+# Remove cached bytecode files created by `guild compile`
 #
 
 # Global guile share folder

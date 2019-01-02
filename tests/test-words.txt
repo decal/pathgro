@@ -1,0 +1,9 @@
+PascalCased
+Test
+WORLD
+__identifier
+camelCase
+dash-delimit
+hello
+screen-01
+snake_case

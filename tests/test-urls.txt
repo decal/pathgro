@@ -1,1 +1,3 @@
-https://www.google.com/accounts/test
+https://google.com/accounts/test/
+https://www.bing.com/images
+https://www.iana.org/reports/1997/cctld-news-oct1997.html

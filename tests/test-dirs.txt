@@ -1,0 +1,8 @@
+/cgi-bin
+/home/user
+/home/webmaster/.npm
+/public_html
+/root/.
+/tmp
+/usr/
+/var/www/html

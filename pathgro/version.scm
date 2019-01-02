@@ -14,7 +14,7 @@
   (display " ")
   (display (colorize-string "v1.0" 'BLACK 'ON-YELLOW 'UNDERLINE))
   (display " ")
-  (display (colorize-string "Copyright (C) 2018" 'BLACK 'ON-CYAN))
+  (display (colorize-string "Copyright (C) 2019" 'BLACK 'ON-CYAN))
   (display " ")
   (display (colorize-string "Derek" 'BLACK 'ON-BLUE)) 
   (display " ")

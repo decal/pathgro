@@ -83,6 +83,12 @@ $ sudo make install
 
 * * *
 
+## Related
+
+* [mgeeky / dirbuster](https://github.com/mgeeky/dirbuster "wfuzz, SecLists and john -based dirbusting / forceful browsing script intended to be used during web pentest assingments")
+
+* * *
+
 <br />
   
 ## License

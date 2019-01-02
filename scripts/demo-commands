@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+#
+# Commands to execute during recording of asciinema.org demonstration
+#
+
+pathgro --help
+
+cat tests/test-paths.txt
+
+pathgro --basename tests/test-paths.txt
+
+pathgro --dirname tests/test-paths.txt
+
+pathgro --Kperms 2 tests/test-paths.txt
+
+pathgro --Traverse 1 tests/test-paths.txt
+
+pathgro --Combos 3 tests/test-paths.txt
+
+pathgro --Powerset 4 tests/test-paths.txt
+
+pathgro --5Grow tests/test-paths.txt
+
+exit 0

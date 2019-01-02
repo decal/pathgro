@@ -74,7 +74,9 @@ uninstall:
 clean:
 	-rm ${OBJ} 2>/dev/null
 
-test: testpaths testqueries testurls testwww
+test: testall
+
+testall: testbad testdirs testfiles testpaths testqueries testurls testwords testwww
 
 testpaths:
 	-pathgro -b tests/test-paths.txt
@@ -279,7 +281,7 @@ testwww:
 	-pathgro --6Grow tests/test-www.txt
 	-pathgro --7Grow tests/test-www.txt
 	-pathgro --8Grow tests/test-www.txt
-  
+
 testbad:
 	-pathgro -b tests/test-bad.txt
 	-pathgro -d tests/test-bad.txt
@@ -330,3 +332,156 @@ testbad:
 	-pathgro --6Grow tests/test-bad.txt
 	-pathgro --7Grow tests/test-bad.txt
 	-pathgro --8Grow tests/test-bad.txt
+
+testfiles:
+	-pathgro -b tests/test-files.txt
+	-pathgro -d tests/test-files.txt
+	-pathgro -e tests/test-files.txt
+	-pathgro -f tests/test-files.txt
+	-pathgro -x tests/test-files.txt
+	-pathgro -bd tests/test-files.txt
+	-pathgro -be tests/test-files.txt
+	-pathgro -bf tests/test-files.txt
+	-pathgro -bx tests/test-files.txt
+	-pathgro -de tests/test-files.txt
+	-pathgro -df tests/test-files.txt
+	-pathgro -dx tests/test-files.txt
+	-pathgro -ef tests/test-files.txt
+	-pathgro -ex tests/test-files.txt
+	-pathgro -fx tests/test-files.txt
+	-pathgro -bde tests/test-files.txt
+	-pathgro -bdf tests/test-files.txt
+	-pathgro -bdx tests/test-files.txt
+	-pathgro -def tests/test-files.txt
+	-pathgro -dex tests/test-files.txt
+	-pathgro -efx tests/test-files.txt
+	-pathgro -bdef tests/test-files.txt
+	-pathgro -bdex tests/test-files.txt
+	-pathgro -bdefx tests/test-files.txt
+	-pathgro -bn tests/test-files.txt
+	-pathgro -dn tests/test-files.txt
+	-pathgro -en tests/test-files.txt
+	-pathgro -fn tests/test-files.txt
+	-pathgro -xn tests/test-files.txt
+	-pathgro -P1 tests/test-files.txt
+	-pathgro -bdefxn tests/test-files.txt
+	-pathgro -C1 tests/test-files.txt
+	-pathgro -K1 tests/test-files.txt
+	-pathgro -T1 tests/test-files.txt
+	-pathgro -T2 tests/test-files.txt
+	-pathgro -m tests/test-files.txt
+	-pathgro -v tests/test-files.txt
+	-pathgro -s tests/test-files.txt
+	-pathgro -mv tests/test-files.txt
+	-pathgro -mvs tests/test-files.txt
+	-pathgro -g tests/test-files.txt
+	-pathgro --1Grow tests/test-files.txt
+	-pathgro --2Grow tests/test-files.txt
+	-pathgro --3Grow tests/test-files.txt
+	-pathgro --4Grow tests/test-files.txt
+	-pathgro --5Grow tests/test-files.txt
+	-pathgro --6Grow tests/test-files.txt
+	-pathgro --7Grow tests/test-files.txt
+	-pathgro --8Grow tests/test-files.txt
+
+testdirs:
+	-pathgro -b tests/test-dirs.txt
+	-pathgro -d tests/test-dirs.txt
+	-pathgro -e tests/test-dirs.txt
+	-pathgro -f tests/test-dirs.txt
+	-pathgro -x tests/test-dirs.txt
+	-pathgro -bd tests/test-dirs.txt
+	-pathgro -be tests/test-dirs.txt
+	-pathgro -bf tests/test-dirs.txt
+	-pathgro -bx tests/test-dirs.txt
+	-pathgro -de tests/test-dirs.txt
+	-pathgro -df tests/test-dirs.txt
+	-pathgro -dx tests/test-dirs.txt
+	-pathgro -ef tests/test-dirs.txt
+	-pathgro -ex tests/test-dirs.txt
+	-pathgro -fx tests/test-dirs.txt
+	-pathgro -bde tests/test-dirs.txt
+	-pathgro -bdf tests/test-dirs.txt
+	-pathgro -bdx tests/test-dirs.txt
+	-pathgro -def tests/test-dirs.txt
+	-pathgro -dex tests/test-dirs.txt
+	-pathgro -efx tests/test-dirs.txt
+	-pathgro -bdef tests/test-dirs.txt
+	-pathgro -bdex tests/test-dirs.txt
+	-pathgro -bdefx tests/test-dirs.txt
+	-pathgro -bn tests/test-dirs.txt
+	-pathgro -dn tests/test-dirs.txt
+	-pathgro -en tests/test-dirs.txt
+	-pathgro -fn tests/test-dirs.txt
+	-pathgro -xn tests/test-dirs.txt
+	-pathgro -P1 tests/test-dirs.txt
+	-pathgro -bdefxn tests/test-dirs.txt
+	-pathgro -C1 tests/test-dirs.txt
+	-pathgro -K1 tests/test-dirs.txt
+	-pathgro -T1 tests/test-dirs.txt
+	-pathgro -T2 tests/test-dirs.txt
+	-pathgro -m tests/test-dirs.txt
+	-pathgro -v tests/test-dirs.txt
+	-pathgro -s tests/test-dirs.txt
+	-pathgro -mv tests/test-dirs.txt
+	-pathgro -mvs tests/test-dirs.txt
+	-pathgro -g tests/test-dirs.txt
+	-pathgro --1Grow tests/test-dirs.txt
+	-pathgro --2Grow tests/test-dirs.txt
+	-pathgro --3Grow tests/test-dirs.txt
+	-pathgro --4Grow tests/test-dirs.txt
+	-pathgro --5Grow tests/test-dirs.txt
+	-pathgro --6Grow tests/test-dirs.txt
+	-pathgro --7Grow tests/test-dirs.txt
+	-pathgro --8Grow tests/test-dirs.txt
+
+testwords:
+	-pathgro -b tests/test-words.txt
+	-pathgro -d tests/test-words.txt
+	-pathgro -e tests/test-words.txt
+	-pathgro -f tests/test-words.txt
+	-pathgro -x tests/test-words.txt
+	-pathgro -bd tests/test-words.txt
+	-pathgro -be tests/test-words.txt
+	-pathgro -bf tests/test-words.txt
+	-pathgro -bx tests/test-words.txt
+	-pathgro -de tests/test-words.txt
+	-pathgro -df tests/test-words.txt
+	-pathgro -dx tests/test-words.txt
+	-pathgro -ef tests/test-words.txt
+	-pathgro -ex tests/test-words.txt
+	-pathgro -fx tests/test-words.txt
+	-pathgro -bde tests/test-words.txt
+	-pathgro -bdf tests/test-words.txt
+	-pathgro -bdx tests/test-words.txt
+	-pathgro -def tests/test-words.txt
+	-pathgro -dex tests/test-words.txt
+	-pathgro -efx tests/test-words.txt
+	-pathgro -bdef tests/test-words.txt
+	-pathgro -bdex tests/test-words.txt
+	-pathgro -bdefx tests/test-words.txt
+	-pathgro -bn tests/test-words.txt
+	-pathgro -dn tests/test-words.txt
+	-pathgro -en tests/test-words.txt
+	-pathgro -fn tests/test-words.txt
+	-pathgro -xn tests/test-words.txt
+	-pathgro -P1 tests/test-words.txt
+	-pathgro -bdefxn tests/test-words.txt
+	-pathgro -C1 tests/test-words.txt
+	-pathgro -K1 tests/test-words.txt
+	-pathgro -T1 tests/test-words.txt
+	-pathgro -T2 tests/test-words.txt
+	-pathgro -m tests/test-words.txt
+	-pathgro -v tests/test-words.txt
+	-pathgro -s tests/test-words.txt
+	-pathgro -mv tests/test-words.txt
+	-pathgro -mvs tests/test-words.txt
+	-pathgro -g tests/test-words.txt
+	-pathgro --1Grow tests/test-words.txt
+	-pathgro --2Grow tests/test-words.txt
+	-pathgro --3Grow tests/test-words.txt
+	-pathgro --4Grow tests/test-words.txt
+	-pathgro --5Grow tests/test-words.txt
+	-pathgro --6Grow tests/test-words.txt
+	-pathgro --7Grow tests/test-words.txt
+	-pathgro --8Grow tests/test-words.txt
