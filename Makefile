@@ -72,7 +72,7 @@ uninstall:
 	-rm -f  ${DESTDIR}${PREFIX}/bin/${PROGNAME} 
 
 clean:
-	-rm ${OBJ} 2>/dev/null
+	-rm -f ${OBJ} 2>/dev/null
 
 test: testall
 

@@ -6,6 +6,8 @@
 make -j4 clean
 make -j4
 make -j4 install
-make -j4 test
+pathgro
+pathgro
+# make -j4 test
 
 exit 0

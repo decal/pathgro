@@ -6,6 +6,7 @@
 
 (use-modules (pathgro util stdio))
 (use-modules (pathgro base path-slashes))
+(use-modules (pathgro base path-strings))
 
 (define pathcnt 0)
 
@@ -17,9 +18,9 @@
   (println (perform-slash-regexps s)))
 
 (define (output-list n l)
-  (if (>= -1 n)
-    (set! pathcnt (+ pathcnt (length (map regexps-and-print (clean (drop-upto-length n l))))))
-    (set! pathcnt (+ pathcnt (length (map regexps-and-print (clean l)))))))
+  (if (= -1 n)
+    (set! pathcnt (+ pathcnt (length (map regexps-and-print (clean l)))))
+    (set! pathcnt (+ pathcnt (length (map regexps-and-print (clean (take-string-downto-length n l))))))))
 
 (define (flatten x)
   (reverse!

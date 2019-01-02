@@ -1,6 +1,6 @@
 (define-module (pathgro base path-strings)
   #:use-module (ice-9 common-list)
-  #:export (paths2words max-depth join-path append-strings drop-string-length drop-length drop-downto-length drop-upto-length prepend-strings unappend-strings unprepend-strings)) 
+  #:export (paths2words max-depth join-path append-strings drop-string-length take-string-length drop-length drop-downto-length drop-string-downto-length take-string-downto-length drop-upto-length drop-string-upto-length take-string-upto-length prepend-strings unappend-strings unprepend-strings)) 
 
 (define (prepend-strings astr slst)
   (if (null? slst)
@@ -30,7 +30,22 @@
       (cons (car slst) (unappend-strings astr (cdr slst))))))
 
 (define (drop-string-length slen slst)
+  (filter (lambda (s) (= slen (string-count s #\/))) slst))
+
+(define (drop-string-downto-length slen slst)
+  (filter (lambda (s) (>= slen (string-count s #\/))) slst))
+
+(define (drop-string-upto-length slen slst)
   (filter (lambda (s) (<= slen (string-count s #\/))) slst))
+
+(define (take-string-length slen slst)
+  (filter (lambda (s) (not (= slen (string-count s #\/)))) slst))
+
+(define (take-string-downto-length slen slst)
+  (filter (lambda (s) (not (>= slen (string-count s #\/)))) slst))
+
+(define (take-string-upto-length slen slst)
+  (filter (lambda (s) (not (<= slen (string-count s #\/)))) slst))
 
 (define (drop-length llen llst)
   (filter (lambda (l) (= llen (length l))) llst))
