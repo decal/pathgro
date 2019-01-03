@@ -66,6 +66,11 @@ install:
 	@echo export PATH=${PATH}:${HOME}/bin
 	@echo 
 
+reinstall:
+	-scripts/clear-cache
+	-scripts/fresh-make
+	-pathgro
+
 uninstall:
 	-rm -rf ${GUILEINC}/${PROGNAME}
 	-rm -rf ${GUILELIB}/${PROGNAME} 

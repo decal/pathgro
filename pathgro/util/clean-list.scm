@@ -20,7 +20,7 @@
 (define (output-list n l)
   (if (zero? n)
     (set! pathcnt (+ pathcnt (length (map regexps-and-print (clean l)))))
-    (set! pathcnt (+ pathcnt (length (map regexps-and-print (clean (take-string-upto-length n l))))))))
+    (set! pathcnt (+ pathcnt (length (map regexps-and-print (take-string-downto-length n (clean l))))))))
 
 (define (flatten x)
   (reverse!

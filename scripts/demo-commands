@@ -19,6 +19,6 @@ pathgro --Combos 3 tests/test-paths.txt
 
 pathgro --Powerset 4 tests/test-paths.txt
 
-pathgro --5Grow tests/test-paths.txt
+pathgro --Grow 5 tests/test-paths.txt
 
 exit 0
