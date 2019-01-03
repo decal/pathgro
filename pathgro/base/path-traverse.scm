@@ -31,7 +31,6 @@
 (define ucode-traverse-double #("%U252E%U252E"))
 
 (seed->random-state (random (current-time)))
-(seed->random-state (current-time))
 
 (define (cdup-strings vs vt)
   (let-values ((sl (vector-length vs)) (tl (vector-length vt)))
