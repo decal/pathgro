@@ -1,28 +1,3 @@
-<style>
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
-
-body {
-  font-family: 'Open Sans', sans-serif;
-}
-details {
-  margin: 1rem;
-}
-summary {
-  font-weight: bold;
-  list-style-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/right-arrow.svg);
-}
-details[open] summary {
-  list-style-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/down-arrow.svg);
-}
-summary::-webkit-details-marker {
-  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/right-arrow.svg);
-  color: transparent;
-}
-details[open] summary::-webkit-details-marker {
-  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/down-arrow.svg);
-}
-</style>
-
 <p align="center">
   <a href="https://github.com/decal/pathgro/blob/master/COPYING.txt" name="pathgro-copying" id="license-link"><img src="https://img.shields.io/badge/license-LGPLv3-yellow.svg?maxAge=2592000" name="pathgro-license" id="license-image" title="LGPLv3" alt="[ GNU Lesser General Public License ]" crossorigin="anonymous" integrity="sha512-LglCDw+0y0npKqEXzPJQc74NiCCphVtNICdc61slXEiZbt3j6RAwHf52ysL4Eg7B0mbss1VlsL10GdvAZ+82zA==" /></a>
 </p>
@@ -31,7 +6,7 @@ details[open] summary::-webkit-details-marker {
   <tr>
     <td>
       <p align="center">
-        <img height="32%" width="32%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/pathgro-logo.png" alt="[ PathGro Logo | Miracle-Gro(tm) Spoof ]" title="DirBuster Path Food" crossorigin="anonymous" integrity="sha384-n6Qkb58C/K/kkDL0LNpsU9Vx0z6vTSQ9bjZx4VlrRE3FS7LH6J0TKqpm9h1S1L/1" />
+        <img height="32%" width="32%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/pathgro-logo.png" alt="[ PathGro Logo | Miracle-Gro(tm) Spoof ]" title="DirBuster Path Food" crossorigin="anonymous" integrity="sha512-yswWY4vXXS8vCMTN6yMEVjwpsEb/mbl0KEFVbONI7k/diS1nXz9JEd4VtCzbcTsBpkS+cX+0cr/FKz5U8dqe6w==" />
       </p>
     </td>
   </tr>
@@ -112,7 +87,7 @@ $ pathgro --help
 
 ## Usage
 
-<img height="80%" width="80%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/pathgro-usage.png" name="pathgro-usage" id="usage-image" alt="[ PathGro Tool Usage Summary ]" title="PathGro Command Line Options" crossorigin="anonymous" integrity="sha384-JohFyrL8uTZrufLN1XfVqcfhdngDWP2l/KJffx/D7PYtNNzohlEIO/biKyW2N6A8" />
+<img height="80%" width="80%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/pathgro-usage.png" name="pathgro-usage" id="usage-image" alt="[ PathGro Tool Usage Summary ]" title="PathGro Command Line Options" crossorigin="anonymous" integrity="sha512-s7kpnmVa9y542pl1a2BZZhU524sWBx9KdgUTFud9Ld10oDxb/h30/v8HF0wj3OIKsx+7Oq771/ayOSF1sZ2ZAw==" />
 
 * * *
 
