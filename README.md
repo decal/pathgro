@@ -1,3 +1,28 @@
+<style>
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+details {
+  margin: 1rem;
+}
+summary {
+  font-weight: bold;
+  list-style-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/right-arrow.svg);
+}
+details[open] summary {
+  list-style-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/down-arrow.svg);
+}
+summary::-webkit-details-marker {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/right-arrow.svg);
+  color: transparent;
+}
+details[open] summary::-webkit-details-marker {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/down-arrow.svg);
+}
+</style>
+
 <p align="center">
   <a href="https://github.com/decal/pathgro/blob/master/COPYING.txt" name="pathgro-copying" id="license-link"><img src="https://img.shields.io/badge/license-LGPLv3-yellow.svg?maxAge=2592000" name="pathgro-license" id="license-image" title="LGPLv3" alt="[ GNU Lesser General Public License ]" crossorigin="anonymous" integrity="sha512-LglCDw+0y0npKqEXzPJQc74NiCCphVtNICdc61slXEiZbt3j6RAwHf52ysL4Eg7B0mbss1VlsL10GdvAZ+82zA==" /></a>
 </p>
