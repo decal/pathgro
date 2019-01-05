@@ -17,8 +17,10 @@
 `pathgro` takes a brief list of path strings as input and "grows" them into much
 larger sets. It is a tool that freely commingles pathname pieces to generate new
 omnifarious string mappings. It is designed to maximize attack surface coverage
-when testing software components that take pathnames as input, ie. "dirbusting."
-It is a set of [GNU Guile](https://gnu.org/software/guile "GNU's programming and extension language") modules with a command-line interface.
+when testing software components that take pathnames as input; the technique 
+referred to as "dirbusting" as implemented by [dirb](https://dirb.sf.net "DIRB is a Web Content Scanner. It looks for existing and/or hidden Web Objects. It basically works by launching a dictionary based attack against a web server and analyzing the response.")
+is a good example of such testing which stands to benefit.
+`pathgro` has been coded as a set of [GNU Guile](https://gnu.org/software/guile "GNU's programming and extension language") modules that are wrapped in a command-line interface script.
 
 ## Examples
 
@@ -32,35 +34,55 @@ Note that `pathgro --Combos 1` and `pathgro --Kperms 1` will generate equivalent
 
 * **GNU Guile 2.x**
 
-* **NOTE:** you must make sure that you have both `guile` and `guild` executables installed.\
-Some distributions (e.g. *Debian*) provide `guild` separately from `guile`, so simply\
-installing a package called `guile` may not be sufficient.\
-(*Debian* provides `guild` in a package called `guile-2.x-dev`)
+* **NOTE:** you must make sure that you have both of the `guile` and `guild` executables installed.\
+Some Linux distributions (e.g. *Debian*) provide `guild` separately from `guile`, so simply\
+installing a package named `guile` with APT may not be sufficient.\
+(*Debian* provides `guild` in a development package entitled `guile-2.x-dev`)
 
 ## Installation
 
 ``` shell
-# install the required guile binaries
+# 🚊 on Linux, install the required GNU Guile binaries
 $ sudo apt install guile guile-2.0-dev
-# or alternatively..
-$ sudo apt install linuxbrew-wrapper && brew install guile 
-# don't forget to add `~/.linuxbrew/Cellar/guile/2.x.x/bin` to `PATH`
-# on macOS you can simply `brew install guile` after installing Homebrew from brew.sh
 
-# clone the repository:
+# 🍻 on macOS, install Homebrew according to its site at https://brew.sh 
+# 🍺 on Linux, optionally install the Linux version of Homebrew which might maintain a newer version of GNU Guile
+$ sudo apt install linuxbrew-wrapper 
+
+# 🥂 install the GNU Guile package via the default [homebrew/core](https://github.com/Homebrew/homebrew-core "Default formulae for the missing package manager for macOS") tap 
+$ brew install guile 
+
+# 🖥️ on macOS, you can simply `brew install guile` after installing Homebrew from https://brew.sh
+# 💻 on Linux, you may need to add `~/.linuxbrew/Cellar/guile/2.x.x/bin` to `PATH`
+
+# 🌀 clone the repository:
 $ git clone https://github.com/decal/pathgro
 
-# change working directory to pathgro:
+# 📁 change working directory to pathgro:
 $ cd pathgro
 
-# compile the source using the Makefile:
+# ⛵ compile the source using the Makefile:
 $ make
 
-# execute tests using the Makefile:
+# ✈️ execute various tests using the Makefile:
 $ make test
 
-# install pathgro using the Makefile (probably requires root):
+# #️⃣ install pathgro using the Makefile (probably requires root):
 $ sudo make install
+
+# 🗃️ augment the path that GNU Guile searches for Scheme files when loading
+$ export GUILE_LOAD_PATH="$HOME/pathgro"
+
+# 🥚 ensure that the shell process checks for the pathgro runner script in the correct location
+$ export PATH="$PATH:$HOME/bin"
+
+# ⚓ append the above environment variable settings to the shell initialization file
+$ export PATH="$PATH" GUILE_LOAD_PATH="$GUILE_LOAD_PATH" >> ~/.profile
+
+# 📗 read the detailed program usage statement and refer to the table underneath the following screenshot
+$ pathgro --help
+
+# 🐅 That's it--you're done! Go get 'em tiger! Grow your pathname lists!
 ```
 
 ## Usage
@@ -98,9 +120,11 @@ $ sudo make install
 ### Utilities
 
 * [mortalis13 / List-Folders](https://github.com/mortalis13/List-Folders "Lists files and subfolders of a selected local directory")
+
 > Lists files and subfolders of a selected local directory
 
 * [kdomasze / Folder-List](https://github.com/kdomasze/Folder-List "Lists all files and folders in a directory.")
+
 > Lists all files and folders in a directory.
 
 <br />
@@ -112,10 +136,24 @@ $ sudo make install
 ### Listers
 
 * [mgeeky / dirbuster](https://github.com/mgeeky/dirbuster "wfuzz, SecLists and john -based dirbusting / forceful browsing script intended to be used during web pentest assingments")
+
+> wfuzz, SecLists and john -based dirbusting / forceful browsing script intended to be used during web pentest assingments
+
 * [DominikSchlecht / WordLGen](https://github.com/DominikSchlecht/WordLGen "A program that combines given words.")
+
+> A program that combines given words.
+
 * [sc0tfree / mentalist](https://github.com/sc0tfree/mentalist "Mentalist is a graphical tool for custom wordlist generation. It utilizes common human paradigms for constructing passwords and can output the full wordlist as well as rules compatible with Hashcat and John the Ripper.")
+
+> Mentalist is a graphical tool for custom wordlist generation. It utilizes common human paradigms for constructing passwords and can output the full wordlist as well as rules compatible with Hashcat and John the Ripper.
+
 * [BlackArch / wordlistctl](https://github.com/BlackArch/wordlistctl "Fetch, install and search wordlist archives from websites and torrent peers.")
+
+> Fetch, install and search wordlist archives from websites and torrent peers.
+
 * [imkzh / webwordlist](https://github.com/imkzh/webwordlist "a small wordlist that can be used for learning.")
+
+> A small wordlist that can be used for learning.
 
 <br />
 
@@ -126,11 +164,33 @@ $ sudo make install
 ### Lists
 
 * [fuzzdb-project / fuzzdb](https://github.com/fuzzdb-project/fuzzdb "Dictionary of attack patterns and primitives for black-box application fault injection and resource discovery.")
+
+> Dictionary of attack patterns and primitives for black-box application fault injection and resource discovery.
+
 * [danielmiessler / SecLists](https://github.com/danielmiessler/SecLists "SecLists is the security tester's companion. It's a collection of multiple types of lists used during security assessments, collected in one place. List types include usernames, passwords, URLs, sensitive data patterns, fuzzing payloads, web shells, and many more.")
+
+> SecLists is the security tester's companion. It's a collection of multiple types of lists used during security assessments, collected in one place. List types include usernames, passwords, URLs, sensitive data patterns, fuzzing payloads, web shells, and many more.
+
 * [cujanovic / Content-Bruteforcing-Wordlist](https://github.com/cujanovic/Content-Bruteforcing-Wordlist "Wordlist for content(directory) bruteforce discovering with Burp or dirsearch")
+
+> Wordlist for content(directory) bruteforce discovering with Burp or dirsearch
+
 * [1N3 / IntruderPayloads](https://github.com/1N3/IntruderPayloads "A collection of Burpsuite Intruder payloads, BurpBounty payloads, fuzz lists, malicious file uploads and web pentesting methodologies and checklists.")
+
+> A collection of Burpsuite Intruder payloads, BurpBounty payloads, fuzz lists, malicious file uploads and web pentesting methodologies and checklists.
+
 * [decal / werdlists](https://github.com/decal/werdlists "Wordlists, Dictionaries and Other Data Sets for Writing Software Security Test Cases")
-* [samduy / path_traversal_payloads.txt](https://gist.github.com/samduy/8034b3227d472968e23f3817612a6729 "List of common path traversal attacks (can be used with BurpSuite Instruder)")
+
+> Wordlists, Dictionaries and Other Data Sets for Writing Software Security Test Cases
+
+* [Bo0oM / fuzz.txt](https://github.com/Bo0oM/fuzz.txt "Potentially dangerous files")
+
+> Potentially dangerous files
+
+<!-- Commenting this one out since it's a gist and not a repository -->
+<!-- * [samduy / path_traversal_payloads.txt](https://gist.github.com/samduy/8034b3227d472968e23f3817612a6729 "List of common path traversal attacks (can be used with BurpSuite Instruder)")
+
+> List of common path traversal attacks (can be used with BurpSuite Intruder) --> 
 
 <br />
 
@@ -141,10 +201,24 @@ $ sudo make install
 ### Busters
 
 * [TomNomNom / meg](https://github.com/tomnomnom/meg "Fetch many paths for many hosts - without killing the hosts")
+
+> Fetch many paths for many hosts - without killing the hosts
+
 * [EdOverflow / megplus](https://github.com/EdOverflow/megplus "Automated reconnaissance wrapper — TomNomNom's meg on steroids.")
+
+> Automated reconnaissance wrapper — TomNomNom's meg on steroids
+
 * [maurosoria / dirsearch](https://github.com/maurosoria/dirsearch "Web path scanner")
+
+> Web path scanner
+
 * [NoobieDog / Dir-Xcan](https://github.com/NoobieDog/Dir-Xcan "Python version of OWASP's DirBuster Application.")
+
+> Python version of OWASP's DirBuster Application
+
 * [phra / nodebuster](https://github.com/phra/nodebuster "DirBuster for Node.js")
+
+> DirBuster for Node.js
 
 <br />
 
@@ -156,6 +230,5 @@ $ sudo make install
 
 `pathgro` is licensed according to version 3 of the [GNU Lesser General Public License](https://www.gnu.org/licenses/lgpl.html). See [`COPYING.txt`](https://github.com/decal/pathgro/blob/master/COPYING.txt "GPLv3") for more information.
 
-  
 <br /><p align="right"><img height="20%" width="20%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/lgplv3-logo.png" name="lgplv3-logo" id="license-logo" alt="[ LGPLv3 ]" title="GNU Lesser General Public License" crossorigin="anonymous" integrity="sha512-P07UklyWF125WUM4hD18LQNbAfeAL4oSqsQhtaNQsWYZpgtsDaUfo4HIIX9OFQepwodXN2w+XA+oVS5LjQfGrA==" /></p>  
 
