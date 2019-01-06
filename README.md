@@ -18,8 +18,9 @@
 larger sets. It is a tool that freely commingles pathname pieces to generate new
 omnifarious string mappings. It is designed to maximize attack surface coverage
 when testing software components that take pathnames as input; the technique 
-referred to as "dirbusting" as implemented by [dirb](https://dirb.sf.net "DIRB is a Web Content Scanner. It looks for existing and/or hidden Web Objects. It basically works by launching a dictionary based attack against a web server and analyzing the response.")
-is a good example of such testing which stands to benefit.
+referred to as _dirbusting_ as implemented by [dirb](https://dirb.sf.net "DIRB is a Web Content Scanner. It looks for existing and/or hidden Web Objects. It basically works by launching a dictionary based attack against a web server and analyzing the response.")
+is a good example of such testing which stands to benefit from path growing abilities.
+Such tactics exploit [predictable resource location](http://projects.webappsec.org/w/page/13246953/Predictable%20Resource%20Location "Predictable Resource Location is an attack technique used to uncover hidden web site content and functionality.") and are sometimes referred to as [forced browsing](https://www.owasp.org/index.php/Forced_browsing "Forced browsing is an attack where the aim is to enumerate and access resources that are not referenced by the application, but are still accessible.")
 `pathgro` has been coded as a set of [GNU Guile](https://gnu.org/software/guile "GNU's programming and extension language") modules that are wrapped in a command-line interface script.
 
 ## Examples

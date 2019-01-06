@@ -33,19 +33,19 @@
   (filter (lambda (s) (= slen (string-count s #\/))) slst))
 
 (define (drop-string-downto-length slen slst)
-  (filter (lambda (s) (>= slen (string-count s #\/))) slst))
+  (filter (lambda (s) (> slen (string-count s #\/))) slst))
 
 (define (drop-string-upto-length slen slst)
-  (filter (lambda (s) (<= slen (string-count s #\/))) slst))
+  (filter (lambda (s) (< slen (string-count s #\/))) slst))
 
 (define (take-string-length slen slst)
   (filter (lambda (s) (not (= slen (string-count s #\/)))) slst))
 
 (define (take-string-downto-length slen slst)
-  (filter (lambda (s) (not (>= slen (string-count s #\/)))) slst))
+  (filter (lambda (s) (not (> slen (string-count s #\/)))) slst))
 
 (define (take-string-upto-length slen slst)
-  (filter (lambda (s) (not (<= slen (string-count s #\/)))) slst))
+  (filter (lambda (s) (not (< slen (string-count s #\/)))) slst))
 
 (define (drop-length llen llst)
   (filter (lambda (l) (= llen (length l))) llst))

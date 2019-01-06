@@ -30,7 +30,8 @@
 (define ucode-traverse-single #("%U002E%U002E" "%E0%80%AE" "%F0%80%80%AE" "%F8%80%80%80%AE" "%FC%80%80%80%80%AE"))
 (define ucode-traverse-double #("%U252E%U252E"))
 
-(seed->random-state (random (current-time)))
+;(seed->random-state (random (current-time)))
+(seed->random-state 1)
 
 (define (cdup-strings vs vt)
   (let-values ((sl (vector-length vs)) (tl (vector-length vt)))

@@ -6,24 +6,27 @@
 (define-values (booleans-vector numbers-vector chars-vector strings-vector) (values #(#t #f) #(0 1) #(#\0 #\1) #("0" "1")))
 
 (define (srand)
-  (seed->random-state (random (current-time)))
-  (usleep (random (random 100000)))
-  (set! default-random-source (make-random-source))
-  (random-source-randomize! default-random-source)
-  (set! *random-state* (random-state-from-platform))
-  (usleep (random (random 100000))))
+  (seed->random-state 1))
 
-(srand)
+  ;(seed->random-state (random (current-time)))
+  ;(seed->random-state 1)
+  ;(usleep (random (random 100000)))
+  ;(set! default-random-source (make-random-source))
+  ;(random-source-randomize! default-random-source)
+  ;(set! *random-state* (random-state-from-platform))
+  ;(usleep (random (random 100000))))
+
+;(srand)
 
 (define (rand-list-ref alist)
-  (srand)
+  ;(srand)
   (let ((arand (random (length alist))))
     (list-ref alist arand)))
 
 (define rand-values rand-list-ref)
 
 (define (rand-vector-ref avec)
-  (srand)
+  ;(srand)
   (let ((arand (random (vector-length avec))))
     (vector-ref avec arand)))
 
