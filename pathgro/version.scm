@@ -6,7 +6,7 @@
                #:export (display-version))
 
 (use-modules (pathgro util ansi-color))
-(use-modules (pathgro util stdio))
+;(use-modules (pathgro util stdio))
 
 (define (display-version)
   (newline)

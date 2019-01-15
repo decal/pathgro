@@ -1,50 +1,7 @@
 #
-##
-###
-.
 . ext
-..
-.. ext
-...
-... ext
-...ext
-..ext
-.ext
-/
-/.
-/..
-/...
-//
-//##
-//.
-//..
-//...
-///
-///###
-///.
-///..
-///...
-///???
-///???###
-//??
-//??##
-/?#
-/?##
-/?###
-/base .ext
-/base. ext
-/base...ext
-/base..ext
-?
-??
-???
-base .
-base ..
-base ...
-base .ext
 base.
-base. ext
-base..
-base...
-base...ext
-base..ext
+base .
+/base .ext
+/base...ext
+...ext

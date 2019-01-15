@@ -1,5 +1,7 @@
 (define-module (pathgro util stdio)
-  #:export (stdin stdout stderr fprintln println false? true?))
+  #:export (fprintln println stdin stdout stderr))
+
+(define-values (stdin stdout stderr) (values (current-input-port) (current-output-port) (current-error-port)))
 
 (define (fprintln astr aport)
   (display astr aport)
@@ -8,14 +10,20 @@
 (define (println astr)
   (fprintln astr stdout))
 
-(define (fnewlines acnt aport)
-  (if (zero? acnt)
-    #t
-    (begin
-      (newline aport)
-      (fnewlines (- acnt 1) aport))))
+;(define (dbgout alist)
+;  (display (string (car alist)))
+;  (display (cdr alist))
+;  (newline))
 
-(define-values (stdin stdout stderr) (values (current-input-port) (current-output-port) (current-error-port)))
+;(dbgout (list println "abc"))
 
-(define (newlines acnt)
-  (fnewlines acnt stdout))
+
+;(define (fnewlines acnt aport)
+;  (if (zero? acnt)
+;    #t
+;    (begin
+;      (newline aport)
+;      (fnewlines (- acnt 1) aport))))
+
+;(define (newlines acnt)
+;  (fnewlines acnt stdout))

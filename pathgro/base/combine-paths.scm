@@ -1,6 +1,6 @@
 (define-module (pathgro base combine-paths)
-  #:export (combine-paths-helper combine-paths combine-files-helper combine-files)
-  #:use-module (ice-9 common-list))
+  #:use-module (ice-9 common-list)
+  #:export (combine-paths-helper combine-paths combine-files-helper combine-files))
 
 ; essentially a cartesian product for lists of strings
 (define (combine-paths-helper slist elist)

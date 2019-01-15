@@ -1,14 +1,23 @@
 (define-module (pathgro util rand-values)
   #:use-module (srfi srfi-27)
-  #:export (srand rand-values rand-truth-value rand-boolean-string rand-boolean-number))
+  #:export (srand rand-values rand-integer-pair rand-truth-value))
 
-(define-values (boolean-true boolean-false number-zero number-one char-zero char-one string-zero string-one) (values #t #f 0 1 #\0 #\1 "0" "1"))
-(define-values (booleans-vector numbers-vector chars-vector strings-vector) (values #(#t #f) #(0 1) #(#\0 #\1) #("0" "1")))
+(define booleans-vector #(#t #f))
+
+;(define (srand)
+;  (seed->random-state 0))
+
+;(define (srand)
+;  (seed->random-state 1))
 
 (define (srand)
-  (seed->random-state 1))
+  (seed->random-state (random (current-time))))
 
+(srand)
+
+;(define (srand)
   ;(seed->random-state (random (current-time)))
+  ;(display "SRAND")(newline)
   ;(seed->random-state 1)
   ;(usleep (random (random 100000)))
   ;(set! default-random-source (make-random-source))
@@ -16,25 +25,23 @@
   ;(set! *random-state* (random-state-from-platform))
   ;(usleep (random (random 100000))))
 
-;(srand)
-
 (define (rand-list-ref alist)
-  ;(srand)
   (let ((arand (random (length alist))))
     (list-ref alist arand)))
 
 (define rand-values rand-list-ref)
 
 (define (rand-vector-ref avec)
-  ;(srand)
   (let ((arand (random (vector-length avec))))
     (vector-ref avec arand)))
 
 (define (rand-truth-value)
   (rand-vector-ref booleans-vector))
 
-(define (rand-boolean-string)
-  (rand-vector-ref strings-vector))
-
-(define (rand-boolean-number)
-  (rand-vector-ref booleans-vector))
+(define (rand-integer-pair)
+  (letrec* ((acombos (random 5))
+          (apowers (random acombos)))
+      (when (zero? apowers) (set! apowers (- acombos 1)))
+      (if (zero? acombos) 
+        (rand-integer-pair)
+        (values acombos apowers))))

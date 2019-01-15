@@ -1,4 +1,4 @@
+/.OSInstallerMessages
 /etc/hosts
 /home/super/.profile
 /var/www/html/index.html
-/.OSInstallerMessages

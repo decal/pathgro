@@ -28,5 +28,5 @@
   (if (null? slst)
     '()
     (if (string=? (substring (car slst) (- (string-length (car slst)) 1) (string-length (car slst))) "/")
-      (cons (substring 0 (- (string-length (car slst)) 1) (unappend-slashes (cdr slst))))
+      (cons (substring 0 (- (string-length (car slst)) 1)) (unappend-slashes (cdr slst)))
       (cons (string-trim-right (car slst)) (unappend-slashes (cdr slst))))))

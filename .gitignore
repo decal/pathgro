@@ -1,7 +1,8 @@
+.whitesource
+.pathgrorc
 *.ss~
 *.ss#*
 .#*.ss
-
 *.scm~
 *.scm#*
 .#*.scm

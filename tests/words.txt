@@ -1,9 +1,9 @@
 PascalCased
 Test
 WORLD
-__identifier
 camelCase
 dash-delimit
 hello
+__identifier
 screen-01
 snake_case

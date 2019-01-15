@@ -1,0 +1,5 @@
+/a.cfm;#
+/acl.pl#read,write
+/a.page?a=1#debug/admin/only
+/cgi-bin/test.cgi?c=1&a=1#fragment
+/index.html?##

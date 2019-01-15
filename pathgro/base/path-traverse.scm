@@ -86,9 +86,9 @@
     (if (string=? (car adirs) "/")
       (cons "/" (path-traverse amaxd atrav (cdr adirs)))
       (letrec* ((npath (normal-path (car adirs))) 
-	       (adept (path-depth npath))
-	       (acdup (string-increases amaxd atrav))
-	       (cdups (map (lambda (x) (string-append npath x)) acdup))) 
+         (adept (path-depth npath))
+         (acdup (string-increases amaxd atrav))
+         (cdups (map (lambda (x) (string-append npath x)) acdup))) 
         (append cdups (path-traverse amaxd atrav (cdr adirs)))))))
 
 ;(define cdup-string (rand-cdup-string ascii-separate-single ascii-traverse-single))

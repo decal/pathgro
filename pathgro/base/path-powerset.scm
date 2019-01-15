@@ -1,7 +1,5 @@
 (define-module (pathgro base path-powerset)
-               #:export (path-powerset)
-               #:use-module (srfi srfi-1)
-               #:use-module (ice-9 common-list))
+               #:export (path-powerset))
 
 (use-modules (pathgro base path-combos))
 

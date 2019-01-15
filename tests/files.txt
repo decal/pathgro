@@ -1,11 +1,11 @@
-.ignore
-.test.txt.swp
 01FAX.TIFF
 1.JPG
 dl.ax~
 download.tar.gz
 favicon.ico
+.ignore
 image.png
 index.html
 pic_1.gif
 screen-shot.jpeg
+.test.txt.swp

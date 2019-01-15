@@ -1,0 +1,8 @@
+/
+/bin/.
+//dev//
+/home/decal
+/opt/./
+/root
+/var/tmp/
+/var/www/html

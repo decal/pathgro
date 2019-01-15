@@ -1,6 +1,6 @@
 (define-module (pathgro base read-pathsfiles)
                #:use-module (ice-9 common-list)
-               #:use-module (ice-9 regex)
+               ;#:use-module (ice-9 regex)
                #:export (bases dirns extns read-pathsfiles))
 
 (use-modules (pathgro base path-strings))

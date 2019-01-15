@@ -15,6 +15,7 @@
       (regexp-substitute/global #f "/$" rstr 'pre "" 'post)))
 
 (define (regexps-and-print s)
+  s
   (println (perform-slash-regexps s)))
 
 (define (output-list n l)

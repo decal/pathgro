@@ -2,10 +2,10 @@
 /adir/bdir/cdir/
 /b.jsp
 /cgi-bin/a.jsp
+css/x.css
 /dir
 /dir2/
-/dirname/basename.ext
-css/x.css
 dir3/
+/dirname/basename.ext
 filename.txt
 folder

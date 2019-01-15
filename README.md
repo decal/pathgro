@@ -1,5 +1,7 @@
 <p align="center">
   <a href="https://github.com/decal/pathgro/blob/master/COPYING.txt" name="pathgro-copying" id="license-link"><img src="https://img.shields.io/badge/license-LGPLv3-yellow.svg?maxAge=2592000" name="pathgro-license" id="license-image" title="LGPLv3" alt="[ GNU Lesser General Public License ]" crossorigin="anonymous" integrity="sha512-LglCDw+0y0npKqEXzPJQc74NiCCphVtNICdc61slXEiZbt3j6RAwHf52ysL4Eg7B0mbss1VlsL10GdvAZ+82zA==" /></a>
+  <a href="https://paypal.me/decal/5" name="pathgro-paypal" id="paypal-me"><img src="https://github.com/decal/pathgro/blob/master/assets/donate-paypal.svg" name="paypal-pathgro" id="donate-paypal" title="PayPal Donate" alt="[ PayPal.Me $5! ]" crossorigin="anonymous" integrity=""sha512-JL3EaZQoPmVEcrg15sjbf6i2vpkqi4zByTa6SiCe2+lQM63jiCbs+EikSp+aKRs3KGOSyzF3OMsfUe6gewF7wg==" /></a>
+  <a href="#" name="macos-linux" id="maclin-link"><img src="https://github.com/decal/pathgro/blob/master/assets/macos-linux.svg" name="pathgro-maclin" id="maclin-image" title="Linux and macOS" alt="[ Linux and macOS ]" crossorigin="anonymous" integrity="sha512-JL3EaZQoPmVEcrg15sjbf6i2vpkqi4zByTa6SiCe2+lQM63jiCbs+EikSp+aKRs3KGOSyzF3OMsfUe6gewF7wg==" /></a>
 </p>
 
 <table translate="no" title="PathGro" name="pathgro-table" id="pgtable" style="border-color: yellow; border-collapse: separate; border-spacing: 8px; display: table">
