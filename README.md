@@ -31,16 +31,21 @@ General overview of the functionality:
 
 [![PathGro Usage Examples](https://asciinema.org/a/InUx4vKTr0cUYyVYA5jlzVtZi.svg "Terminal Recording Demonstrating Command Line Execution of PathGro Tool")](https://asciinema.org/a/InUx4vKTr0cUYyVYA5jlzVtZi "Various Examples of Growing Path Lists")
 
-Note that `pathgro --Combos 1` and `pathgro --Kperms 1` will generate equivalent lists according to their definitions.
+Note that `pathgro --Combos 1` and `pathgro --Powerset 1` will generate equivalent lists according to their definitions.
 
 ## Dependencies
 
-* **GNU Guile 2.x**
+### Requirement
 
-* **NOTE:** you must make sure that you have both of the `guile` and `guild` executables installed.\
-Some Linux distributions (e.g. *Debian*) provide `guild` separately from `guile`, so simply\
-installing a package named `guile` with APT may not be sufficient.\
-(*Debian* provides `guild` in a development package entitled `guile-2.x-dev`)
+* **GNU Guile 2.x**
+  - **NOTE:** you must make sure that you have both of the `guile` and `guild` executables installed.\
+    Some Linux distributions (e.g. *Debian*) provide `guild` separately from `guile`, so simply\
+    installing a package named `guile` with APT may not be sufficient.\
+    (*Debian* provides `guild` in a development package entitled `guile-2.x-dev`)
+
+### Optional
+
+* **direnv**
 
 ## Installation
 
@@ -58,29 +63,26 @@ $ brew install guile
 # 🖥️ on macOS, you can simply `brew install guile` after installing Homebrew from https://brew.sh
 # 💻 on Linux, you may need to add `~/.linuxbrew/Cellar/guile/2.x.x/bin` to `PATH`
 
-# 🌀 clone the repository:
+# 🌀 clone the source code repository
 $ git clone https://github.com/decal/pathgro
 
-# 📁 change working directory to pathgro:
+# 📁 change working directory to pathgro
 $ cd pathgro
 
-# ⛵ compile the source using the Makefile:
+# ⛵ compile the source using the Makefile
 $ make
 
-# ✈️ execute various tests using the Makefile:
+# ✈️ execute various tests using the Makefile
 $ make test
 
-# #️⃣ install pathgro using the Makefile (probably requires root):
-$ sudo make install
-
-# 🗃️ augment the path that GNU Guile searches for Scheme files when loading
-$ export GUILE_LOAD_PATH="$HOME/pathgro"
-
-# 🥚 ensure that the shell process checks for the pathgro runner script in the correct location
-$ export PATH="$PATH:$HOME/bin"
+# #️⃣ install pathgro using the Makefile
+$ make install
 
 # ⚓ append the above environment variable settings to the shell initialization file
-$ export PATH="$PATH" GUILE_LOAD_PATH="$GUILE_LOAD_PATH" >> ~/.profile
+$ cat ~/.pathgrorc >> ~/.bashrc
+
+# 🥚 re-assign path environment variables for Guile and the current shell process
+$ . .pathgrorc
 
 # 📗 read the detailed program usage statement and refer to the table underneath the following screenshot
 $ pathgro --help
@@ -103,14 +105,24 @@ $ pathgro --help
 | `--Grow 4`, `-G4` | <br /><details><summary>auto-save and backup file names</summary><br />`--macos`, `--saves`</details><br />
 | `--Grow 5`, `-G5` | <br /><details><summary>vim swap file names, one-byte base name appendages and extensions</summary><br />`--generate`, `--vimswap`</details><br />
 | `--Grow 6`, `-G6` | <br /><details><summary>`-G4` and `-G5` togther</summary><br />`--macos`, `--saves`, `--generate`, `--vimswap`</details><br />
-| `--Grow 7`, `-G7` | <br /><details><summary>combinations and permutations of folders two levels deep with traversals of same depth</summary><br />`--Combos 2`, `--Kperms 2`, `--Traverse 2`</details><br />
-| `--Grow 8`, `-G8` | <br /><details><summary>enable each individual flag while passing the value `1` to each set operation</summary><br />`--basename`, `--extname`, `--filename`, `--dirname`, `--xtdirname`, `--macos`, `--saves`, `--generate`, `--vimswap`, `--Combos`, `--Powerset`, `--Kperms`, `--Traverse`</summary> `--basename`, `--extname`, `--filename`, `--dirname`, `--xtdirname`, `--macos`, `--saves`, `--generate`, `--vimswap`, `--Combos`, `--Powerset`, `--Kperms`, `--Traverse`</details><br />
+| `--Grow 7`, `-G7` | <br /><details><summary>combinations of folders two levels deep with traversals of same depth</summary><br />`--Combos 2`, `--Traverse 2`</details><br />
+| `--Grow 8`, `-G8` | <br /><details><summary>enable each individual flag while passing the value `1` to each set operation</summary><br />`--basename`, `--extname`, `--filename`, `--dirname`, `--xtdirname`, `--macos`, `--saves`, `--generate`, `--vimswap`, `--Combos`, `--Powerset`, `--Traverse`</summary> `--basename`, `--extname`, `--filename`, `--dirname`, `--xtdirname`, `--macos`, `--saves`, `--generate`, `--vimswap`, `--Combos`, `--Powerset`, `--Traverse`</details><br />
 
 * * *
 
 > Note that depending upon the command-line invocation's combined option flags, the results may still need to be uniqued by piping the output stream to `sort -u`. 
 
 <br />
+
+* * *
+
+<br />
+
+## Errors
+
+* `ERROR: no code for module (pathgro main)`
+
+> Don't forget to run `make install` and `. ~/.pathgrorc` before attempting to execute `pathgro`
 
 * * *
 
@@ -235,3 +247,4 @@ $ pathgro --help
 
 <br /><p align="right"><img height="20%" width="20%" src="https://raw.githubusercontent.com/decal/pathgro/master/assets/lgplv3-logo.png" name="lgplv3-logo" id="license-logo" alt="[ LGPLv3 ]" title="GNU Lesser General Public License" crossorigin="anonymous" integrity="sha512-P07UklyWF125WUM4hD18LQNbAfeAL4oSqsQhtaNQsWYZpgtsDaUfo4HIIX9OFQepwodXN2w+XA+oVS5LjQfGrA==" /></p>  
 
+ERROR: no code for module (pathgro main)

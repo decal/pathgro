@@ -14,10 +14,7 @@ PROGNAME := pathgro
 
 PREFIX := ${HOME}
 
-SCRIPTDIR := scripts
-
-CONFIG         := pathgro.conf
-CONFIG_DESTDIR := ${HOME}/share
+SCRIPTDIR := bin
 
 GUILEINC := ${DESTDIR}$(shell guile -c "(display (%site-dir))")
 GUILELIB := ${DESTDIR}$(shell guile -c "(display (%site-ccache-dir))")
@@ -25,16 +22,16 @@ GUILELIB := ${DESTDIR}$(shell guile -c "(display (%site-ccache-dir))")
 GUILEC := guild compile
 
 SUBDIRS := $(shell find ${PROGNAME} -type d -print)
-SRC := $(foreach subdir, ${SUBDIRS}, $(wildcard ${subdir}/{util,base}/*.scm))
+SRC := $(foreach subdir, ${SUBDIRS}, $(wildcard ${subdir}/*/*.scm))
 OBJ := ${SRC:.scm=.go}
 
 .SILENT: OBJ
 
-export GUILE_AUTO_COMPILE = 0
-export GUILE_LOAD_PATH = ${CURDIR}
+#export GUILE_AUTO_COMPILE=1 
+#export GUILE_LOAD_PATH="${CURDIR}"
 
-all: ${SRC}
-	${OBJ}
+all: ${SRC} compile
+	@echo ${SRC}
 
 pathgro/help.go: pathgro/help.scm
 	$(foreach object, pathgro/help.go, ${GUILEC} -o pathgro/help.go pathgro/help.scm ;)
@@ -46,13 +43,19 @@ pathgro/version.go: pathgro/version.scm
 	$(foreach object, pathgro/version.go, ${GUILEC} -o pathgro/version.go pathgro/version.scm ;)
 
 
-OBJ: ${SRC} pathgro/help.scm pathgro/main.scm pathgro/version.scm
+compile: ${SRC} pathgro/help.scm pathgro/main.scm pathgro/version.scm
 	$(foreach object, ${OBJ}, ${GUILEC} -o ${object} ${object:.go=.scm} 2>/dev/null;)
 
 strip: 
 	@strip ${OBJ} 2>/dev/null
 
-install: 
+envrc: 
+	@echo "export GUILE_LOAD_PATH=${HOME}/pathgro" > .envrc
+	@echo "export PATH=${HOME}/bin:${PATH}" >> .envrc
+	@install -v -m 0644 .envrc ~
+
+install: envrc
+	@$( ! [ -d ~/bin -a -d ~/pathgro ] && install -v -d -m 0751 ~/bin ~/pathgro )
 	@echo
 	@echo "Copying object files to ${HOME}/pathgro"
 	@echo 
@@ -67,30 +70,26 @@ install:
 	@echo "Don't forget to add these statements to your shell's initialization file:"
 	@echo
 	@echo "export GUILE_LOAD_PATH=${HOME}/pathgro"
-	@echo "export GUILE_LOAD_PATH=${HOME}/pathgro > .pathgrorc"
-	@echo "export PATH=${PATH}:${HOME}/bin"
-	@echo "export PATH=${PATH}:${HOME}/bin >> .pathgrorc"
+	@echo "export PATH=${HOME}/bin:${PATH}"
 	@echo  
 	@echo 'This can be accomplished with:'
 	@echo  
-	@echo 'cat .pathgrorc >> ~/.bashrc'
+	@echo 'cat ~/.envrc >> ~/.bashrc'
 	@echo  
-	@echo 'You may execute these statements to update your current shell process environment via:'
+	@echo 'You can execute those export statements to update your current shell process environment via:'
 	@echo 
-	@echo 'source .pathgrorc'
+	@echo '. ~/.envrc'
 	@echo 
 
-reinstall:
-	-scripts/clear-cache
-	-scripts/fresh-make
-	-pathgro
+reinstall: clobber clean
+	-bin/clear-cache
+	-bin/fresh-make
 
 clobber: uninstall
 
 uninstall:
 	-rm -fr "${HOME}/pathgro" 2>/dev/null
 	-rm -f  ${DESTDIR}${PREFIX}/bin/${PROGNAME} 2>/dev/null
-	#-rm -rf ${GUILEINC}/${PROGNAME} ${GUILELIB}/${PROGNAME} 2>/dev/null
 
 clean:
 	-rm -f ${OBJ} 2>/dev/null

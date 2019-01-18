@@ -10,9 +10,9 @@
         (anext (extname apth))
         (upper-limit 94) (lower-limit 33) (increment-value 1))
       (append
-        (map (lambda (d) (string-append "/" abase (format #f "~c" (integer->char d))) (iota upper-limit lower-limit increment-value)))
+        (map (lambda (d) (format #f (string-append "/" abase "~c" (integer->char d))) (iota upper-limit lower-limit increment-value)))
         (map (lambda (d) (format #f (string-append "/" abase ".~c") (integer->char d))) (iota upper-limit lower-limit increment-value))
         (map (lambda (d) (format #f (string-append "/" anext "~c") (integer->char d))) (iota upper-limit lower-limit increment-value))
         (map (lambda (d) (format #f (string-append "/" anext ".~c") (integer->char d))) (iota upper-limit lower-limit increment-value))
         (map (lambda (d) (format #f (string-append "/" abase "." anext "~c") (integer->char d))) (iota upper-limit lower-limit increment-value))
-        (map (lambda (d) (string-append "/" abase "." anext (format #f ".~c" (integer->char d))) (iota upper-limit lower-limit increment-value))))))
+        (map (lambda (d) (format #f (string-append "/" abase "." anext ".~c" (integer->char d))) (iota upper-limit lower-limit increment-value))))))

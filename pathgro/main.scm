@@ -112,8 +112,8 @@
             (set! opt-Traverse 2)))
         (when (= 8 opt-Grow) 
           (let-values ([(xcombos xpowers) (rand-integer-pair)])
-            (set! opt-Traverse 2)
-            (set! opt-Powerset 4)))
+            (set! opt-Traverse xcombos)
+            (set! opt-Powerset xpowers)))
         (when (= 9 opt-Grow) 
           (begin 
             (set! opt-basename #t) 
