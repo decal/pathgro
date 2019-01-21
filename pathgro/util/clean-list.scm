@@ -66,7 +66,7 @@
   (delete-duplicates!
         (flatten l)))
 
-(define (empty-string-list? alist)
-  (if (null? alist)
-    alist
-    (and (= 1 (length alist)) (eq? (car alist) ""))))
+;(define (empty-string-list? alist)
+;  (if (null? alist)
+;    alist
+;    (and (= 1 (length alist)) (eq? (car alist) ""))))

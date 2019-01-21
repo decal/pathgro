@@ -1,3 +1,5 @@
+* check files for useless use of `use-modules`
+
 * use `guile-coroutines` for `lazy-flatten`
 
 * support date string formatting
@@ -36,8 +38,6 @@
 * use a command-line option for random and/or semi-random shuffles
 
 * implement derangements as set operation in addition to `power-set`, `n-choose-r`, etc.
-
-* accept a command-line flag for each expansion type (and create useful groups of these)
 
 * string insertion features
   1. prefixes

@@ -27,7 +27,7 @@ OBJ := ${SRC:.scm=.go}
 
 .SILENT: OBJ
 
-#export GUILE_AUTO_COMPILE=1 
+export GUILE_AUTO_COMPILE=1 
 #export GUILE_LOAD_PATH="${CURDIR}"
 
 all: ${SRC} compile
@@ -74,7 +74,7 @@ install: envrc
 	@echo  
 	@echo 'This can be accomplished with:'
 	@echo  
-	@echo 'cat ~/.envrc >> ~/.bashrc'
+	@echo 'cat ~/.envrc >> ~/.profile'
 	@echo  
 	@echo 'You can execute those export statements to update your current shell process environment via:'
 	@echo 

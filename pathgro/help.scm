@@ -37,7 +37,7 @@
   (display "  ")
   (display (colorize-string "-e, --extname" 'BLACK 'ON-GREEN 'BOLD 'UNDERLINE))
   (display "      ")
-  (display (colorize-string "output file extensions with no basenames and no directory names" 'MAGENTA))
+  (display (colorize-string "output file extensions without base and directory names" 'MAGENTA))
   (newline)
   (display "  ")
   (display (colorize-string "-n, --noslash" 'BLACK 'ON-GREEN 'BOLD 'UNDERLINE))

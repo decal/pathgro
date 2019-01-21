@@ -3,7 +3,7 @@
   #:use-module (ice-9 common-list))
 
 (use-modules (pathgro base combine-paths) (pathgro base path-strings))
-(use-modules (pathgro util stdio) (pathgro util clean-list))
+(use-modules (pathgro util permute-list) (pathgro util clean-list))
 
 (define (combos m lst)
   (cond ((zero? m) '(()))
@@ -13,7 +13,7 @@
 
 (define (path-combos cdepth cfiles dirns)
   (letrec*
-     ((aset (drop-length cdepth (combos cdepth dirns)))
+     ((aset (drop-length cdepth (permute-list (combos cdepth dirns))))
       (amap (map join-path aset))
       (apls (clean amap)))
     (append apls (combine-paths-helper apls cfiles))))

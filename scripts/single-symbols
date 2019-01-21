@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#
+# Find procedure identifiers that only occur once so they can be removed from the source tree
+#
+
+for aproc in $(find pathgro -type f -name '*.scm' -exec egrep -Hrna '[(][[:space:]]*define[[:space:]]+' {} \; | awk -F\) '{print$1}' | cut -d ' ' -f2 | tr -d '[(]' | sort -u);do declare -i instanceCount=$(egrep -Hrna -- "$aproc" pathgro | wc -l);[ $instanceCount -eq 1 ] && echo "$aproc" && egrep -Hrna -- "$aproc" pathgro;done
+
+exit 0
